@@ -1,0 +1,21 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import OpenInApp from '~/components/OpenInApp.astro';
+
+export const getStaticPaths = () => {
+  return [{ params: { id: 'preview' } }];
+};
+
+const { id } = Astro.params;
+---
+<BaseLayout
+  title="Abrir guia no app"
+  description="Perfil de guia no iFishing. Abra no aplicativo para ver detalhes."
+  noindex
+>
+  <OpenInApp
+    kind="guide"
+    label="Perfil de guia no iFishing"
+    subtitle={`Carregando o guia ${id ?? ''} no app. Se você está no celular, o iFishing abre automaticamente.`}
+  />
+</BaseLayout>

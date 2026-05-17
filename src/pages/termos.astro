@@ -1,0 +1,114 @@
+---
+import LegalLayout from '~/layouts/LegalLayout.astro';
+import { SITE } from '~/lib/site';
+---
+<LegalLayout
+  title="Termos de Uso"
+  description="Termos e condições de uso do aplicativo iFishing."
+  lastUpdated="17 de maio de 2026"
+>
+  <p>
+    Estes Termos de Uso ("<strong>Termos</strong>") regem o acesso e a utilização do aplicativo
+    móvel <strong>{SITE.name}</strong> ("<strong>App</strong>"), disponibilizado por
+    <strong>{SITE.legal.razaoSocial}</strong> (CNPJ {SITE.legal.cnpj}), bem como dos sites e
+    serviços relacionados. Ao criar uma conta ou utilizar o App, você concorda integralmente
+    com estes Termos. Caso não concorde, não utilize o App.
+  </p>
+
+  <h2>1. O que é o iFishing</h2>
+  <p>
+    O iFishing é uma plataforma tecnológica que conecta pescadores amadores a guias de pesca
+    profissionais em todo o Brasil. O iFishing não presta diretamente o serviço de guia de
+    pesca: atua exclusivamente como intermediário tecnológico, viabilizando a busca, a
+    comunicação e a reserva entre as partes.
+  </p>
+
+  <h2>2. Cadastro e elegibilidade</h2>
+  <ul>
+    <li>O cadastro exige fornecimento de dados verídicos (nome, e-mail, telefone). Valores, planos e eventuais cobranças serão informados de forma clara no próprio App antes da contratação.</li>
+    <li>O número de telefone é verificado por SMS antes da primeira reserva.</li>
+    <li>Você deve ter ao menos 18 anos ou estar acompanhado e autorizado por responsável legal.</li>
+    <li>Cada pessoa pode manter apenas uma conta ativa.</li>
+  </ul>
+
+  <h2>3. Responsabilidades do pescador (cliente)</h2>
+  <ul>
+    <li>Manter dados de contato atualizados.</li>
+    <li>Comparecer aos compromissos firmados ou cancelar com a maior antecedência possível.</li>
+    <li>Respeitar legislação ambiental, normas de pesca esportiva e instruções do guia.</li>
+    <li>Realizar pagamentos pelo serviço prestado, conforme acordado com o guia.</li>
+  </ul>
+
+  <h2>4. Responsabilidades do guia de pesca</h2>
+  <ul>
+    <li>Manter perfil verídico, com fotos, embarcação e modalidades reais.</li>
+    <li>Manter agenda atualizada, bloqueando datas indisponíveis.</li>
+    <li>Cumprir a pescaria contratada com segurança, equipamento adequado e dentro da lei.</li>
+    <li>Possuir e manter atualizadas as autorizações exigidas para a atividade.</li>
+  </ul>
+
+  <h2>5. Reservas, cancelamentos e avaliações</h2>
+  <p>
+    O fluxo de reserva é realizado dentro do App, com confirmação pelo guia. O cancelamento
+    deve ser feito por uma das partes com o motivo registrado. Após a pescaria, o pescador
+    pode avaliar o guia em estrelas e texto. Avaliações ofensivas, falsas ou que infrinjam
+    a lei serão removidas.
+  </p>
+
+  <h2>6. Pagamentos</h2>
+  <p>
+    O pagamento da pescaria pode ocorrer diretamente entre pescador e guia, conforme combinado.
+    Quando integrado a meios de pagamento dentro do App, valores, taxas e condições serão
+    informados de forma clara antes da confirmação. O iFishing não se responsabiliza por
+    transações realizadas fora da plataforma.
+  </p>
+
+  <h2>7. Conduta proibida</h2>
+  <ul>
+    <li>Fraudar avaliações, criar contas falsas ou se passar por outra pessoa.</li>
+    <li>Utilizar o App para atividades ilegais ou que violem a legislação ambiental.</li>
+    <li>Assediar, ameaçar ou ofender outros usuários.</li>
+    <li>Praticar engenharia reversa, scraping ou qualquer acesso automatizado não autorizado.</li>
+  </ul>
+
+  <h2>8. Suspensão e encerramento</h2>
+  <p>
+    O iFishing pode suspender ou encerrar contas que violem estes Termos, a legislação aplicável
+    ou que apresentem indícios de fraude. Você também pode encerrar sua conta a qualquer momento
+    pelo App ou solicitando em <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
+  </p>
+
+  <h2>9. Propriedade intelectual</h2>
+  <p>
+    A marca, o software, o design e todos os elementos do App são de titularidade do iFishing
+    ou de seus licenciantes. Conteúdos publicados por usuários (fotos, avaliações, descrições)
+    permanecem de propriedade deles, que concedem ao iFishing licença não exclusiva para
+    exibição dentro do serviço.
+  </p>
+
+  <h2>10. Limitação de responsabilidade</h2>
+  <p>
+    O iFishing não é parte do contrato de prestação de serviço entre pescador e guia. Eventuais
+    incidentes, atrasos, divergências ou prejuízos decorrentes da pescaria são de responsabilidade
+    das partes envolvidas. O iFishing empreenderá esforços razoáveis para mediar conflitos, sem
+    que isso configure responsabilidade solidária ou subsidiária.
+  </p>
+
+  <h2>11. Alterações destes Termos</h2>
+  <p>
+    Podemos alterar estes Termos a qualquer tempo. Mudanças relevantes serão comunicadas pelo
+    App ou por e-mail com antecedência razoável. O uso continuado após a vigência implica
+    concordância com a nova versão.
+  </p>
+
+  <h2>12. Lei aplicável e foro</h2>
+  <p>
+    Estes Termos são regidos pela legislação brasileira. Fica eleito o foro do domicílio do
+    consumidor para dirimir controvérsias, sem prejuízo de outros legalmente competentes.
+  </p>
+
+  <h2>13. Contato</h2>
+  <p>
+    Dúvidas sobre estes Termos: <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
+  </p>
+</LegalLayout>

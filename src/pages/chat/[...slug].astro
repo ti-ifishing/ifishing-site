@@ -1,0 +1,19 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import OpenInApp from '~/components/OpenInApp.astro';
+
+export const getStaticPaths = () => {
+  return [{ params: { slug: 'preview' } }];
+};
+---
+<BaseLayout
+  title="Abrir conversa no app"
+  description="Conversa do iFishing. Abra no aplicativo para continuar."
+  noindex
+>
+  <OpenInApp
+    kind="chat"
+    label="Sua conversa no iFishing"
+    subtitle="O chat só funciona dentro do app, abrindo agora pra você."
+  />
+</BaseLayout>

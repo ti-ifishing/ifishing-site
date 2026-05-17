@@ -1,0 +1,12 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- iFishing logo mark — verde primary sobre fundo transparente.
+       Use em headers com fundo branco/claro. -->
+  <g fill="none" stroke="#18A348" stroke-width="44" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 360 512 C 360 374, 488 318, 620 318 C 768 318, 852 410, 852 512 C 852 614, 768 706, 620 706 C 488 706, 360 650, 360 512 Z"/>
+    <path d="M 360 512 L 196 384 C 222 460, 222 564, 196 640 L 360 512 Z"/>
+    <path d="M 528 322 Q 590 254, 668 296"/>
+    <path d="M 540 706 Q 590 754, 644 720"/>
+    <path d="M 470 416 Q 492 512, 470 608" stroke-width="36"/>
+  </g>
+  <circle cx="740" cy="476" r="22" fill="#18A348"/>
+</svg>

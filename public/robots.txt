@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /guide/
+Disallow: /chat/
+
+Sitemap: https://ifishing.com.br/sitemap-index.xml

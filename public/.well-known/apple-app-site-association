@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["TEAMID.com.ifishingsolutions.ifishingapp"],
+        "components": [
+          { "/": "/guide/*", "comment": "Detalhe do guia" },
+          { "/": "/chat/*",  "comment": "Chat" }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["TEAMID.com.ifishingsolutions.ifishingapp"]
+  }
+}

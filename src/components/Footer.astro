@@ -1,0 +1,68 @@
+---
+import { SITE } from '~/lib/site';
+
+const year = new Date().getFullYear();
+
+const columns: Array<{ title: string; links: Array<{ href: string; label: string }> }> = [
+  {
+    title: 'Produto',
+    links: [
+      { href: '/como-funciona', label: 'Como funciona' },
+      { href: '/baixar', label: 'Baixar app' },
+      { href: '/para-guias', label: 'Sou guia de pesca' },
+    ],
+  },
+  {
+    title: 'Empresa',
+    links: [
+      { href: '/contato', label: 'Contato' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { href: '/termos', label: 'Termos de Uso' },
+      { href: '/privacidade', label: 'Política de Privacidade' },
+    ],
+  },
+];
+---
+<footer class="border-t border-surface-border bg-white">
+  <div class="container-page py-12">
+    <div class="grid gap-10 md:grid-cols-4">
+      <div>
+        <a href="/" class="inline-flex items-center gap-2" aria-label={`${SITE.name}, voltar à página inicial`}>
+          <img src="/ifishing-icon.png" alt="" height="40" width="40" class="h-10 w-10 rounded-lg" />
+          <span class="font-display text-xl font-extrabold tracking-tight text-ink">iFishing</span>
+        </a>
+        <p class="mt-3 text-sm text-ink-muted max-w-xs">
+          O app que conecta pescadores a guias de pesca profissionais em todo o Brasil.
+        </p>
+        {SITE.social.instagram && (
+          <a href={SITE.social.instagram} target="_blank" rel="me noopener" class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-ink-muted hover:text-brand-dark" aria-label="Instagram do iFishing">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Instagram
+          </a>
+        )}
+      </div>
+      {columns.map((col) => (
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-ink-muted">{col.title}</h3>
+          <ul class="mt-4 space-y-2">
+            {col.links.map((link) => (
+              <li><a href={link.href} class="text-sm text-ink hover:text-brand-dark">{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="mt-12 border-t border-surface-border pt-6 flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-sm text-ink-muted">
+      <p>
+        © {year} {SITE.legal.razaoSocial}, CNPJ {SITE.legal.cnpj}
+      </p>
+      <p>
+        Contato: <a class="hover:text-brand-dark" href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
+      </p>
+    </div>
+  </div>
+</footer>

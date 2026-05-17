@@ -1,0 +1,73 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { SITE } from '~/lib/site';
+---
+<BaseLayout
+  title="Página não encontrada"
+  description="Esta página não existe. Talvez seja um deep link do app."
+  noindex
+>
+  <section id="not-found" class="container-page py-20 text-center">
+    <p class="text-sm font-semibold text-brand-dark uppercase tracking-wider">Erro 404</p>
+    <h1 class="mt-2 text-4xl sm:text-5xl text-ink">Essa página fugiu do anzol.</h1>
+    <p class="mt-4 max-w-xl mx-auto text-ink-muted text-lg">
+      Não encontramos o que você procurava. Talvez o link esteja errado, ou a página tenha mudado de lugar.
+    </p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <a class="btn-primary" href="/">Voltar pra Home</a>
+      <a class="btn-secondary" href="/baixar">Baixar o app</a>
+    </div>
+  </section>
+
+  <section id="deeplink" class="container-page py-16 hidden">
+    <div class="mx-auto max-w-xl text-center">
+      <span id="deeplink-eyebrow" class="inline-flex items-center gap-2 rounded-full bg-brand-light px-3 py-1 text-xs font-semibold text-brand-dark">
+        <span class="inline-block h-1.5 w-1.5 rounded-full bg-brand"></span>
+        <span>Link do iFishing</span>
+      </span>
+      <h2 id="deeplink-title" class="mt-4 text-3xl sm:text-4xl text-ink">Abrir no iFishing</h2>
+      <p id="deeplink-subtitle" class="mt-3 text-ink-muted">Carregando o conteúdo no app...</p>
+
+      <div class="mt-8 rounded-card border border-surface-border bg-white p-6 text-left">
+        <p class="text-sm font-semibold text-ink">Abra no app pra continuar</p>
+        <p class="mt-1 text-sm text-ink-muted">
+          Esta página é um link especial. Se você tem o iFishing instalado, ela abre direto no app.
+          Senão, instale primeiro e tente de novo.
+        </p>
+        <div class="mt-5 flex flex-col gap-3">
+          <a id="deeplink-open" href="#" class="btn-primary w-full">Abrir no iFishing</a>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a class="btn-secondary flex-1" href={SITE.app.appStoreUrl} target="_blank" rel="noopener">App Store</a>
+            <a class="btn-secondary flex-1" href={SITE.app.playStoreUrl} target="_blank" rel="noopener">Google Play</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline define:vars={{ siteUrl: SITE.url }}>
+  (function () {
+    const path = window.location.pathname;
+    const guideMatch = path.match(/^\/guide\/([^/]+)/);
+    const chatMatch = path.match(/^\/chat\/(.+)/);
+
+    if (guideMatch || chatMatch) {
+      document.getElementById('not-found').classList.add('hidden');
+      const deep = document.getElementById('deeplink');
+      deep.classList.remove('hidden');
+      const title = document.getElementById('deeplink-title');
+      const subtitle = document.getElementById('deeplink-subtitle');
+      const open = document.getElementById('deeplink-open');
+
+      if (guideMatch) {
+        title.textContent = 'Perfil de guia no iFishing';
+        subtitle.textContent = 'Estamos abrindo o perfil no app. Se nada acontecer, instale o iFishing.';
+      } else {
+        title.textContent = 'Sua conversa no iFishing';
+        subtitle.textContent = 'O chat só funciona dentro do app, abrindo agora pra você.';
+      }
+      open.setAttribute('href', siteUrl + path + window.location.search);
+    }
+  })();
+</script>

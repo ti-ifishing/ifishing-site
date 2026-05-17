@@ -1,0 +1,115 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import StoreBadges from '~/components/StoreBadges.astro';
+
+interface Beneficio {
+  title: string;
+  text: string;
+  badge?: string;
+}
+
+const beneficios: Beneficio[] = [
+  {
+    title: 'Visibilidade nacional',
+    text: 'Pescadores buscam guias por cidade, região e espécie em todo o Brasil. Apareça pra quem quer pescar perto de você.',
+  },
+  {
+    title: 'Agenda integrada',
+    text: 'Bloqueie datas, controle dias de manutenção e nunca mais responda "tá livre dia 12?".',
+  },
+  {
+    title: 'Perfil profissional',
+    text: 'Foto, bio, embarcação, modalidades e galeria. Mostra seu trampo do jeito certo pra quem está procurando guia.',
+  },
+  {
+    title: 'Cliente verificado',
+    text: 'O pescador valida o telefone por SMS antes de reservar. Reduz o risco de furo.',
+  },
+  {
+    title: 'Avaliações que convertem',
+    text: 'Boas avaliações puxam mais reservas. O sistema premia quem entrega pescaria boa.',
+  },
+  {
+    title: 'Chat dentro do app',
+    text: 'Tira-dúvida, combinação de roteiro e logística, tudo em um lugar só.',
+  },
+  {
+    title: 'Pagamento no app',
+    text: 'Receba por Pix ou cartão de crédito/débito direto na reserva, com registro de cada movimentação.',
+    badge: 'Em breve',
+  },
+];
+
+const passos = [
+  'Baixe o iFishing e crie sua conta como guia',
+  'Monte seu perfil com foto, bio, embarcação e modalidades',
+  'Seu perfil entra no ar pra pescadores de todo o Brasil',
+  'Gerencie agenda e reservas pelo próprio app',
+];
+---
+<BaseLayout
+  title="Sou guia de pesca"
+  description="Cadastre-se como guia no iFishing e apareça pra pescadores de todo o Brasil."
+>
+  <section class="bg-gradient-to-b from-brand-light to-white">
+    <div class="container-page py-16 lg:py-20 grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="text-sm font-semibold text-brand-dark uppercase tracking-wider">Para guias</p>
+        <h1 class="mt-2 text-4xl sm:text-5xl text-ink">Mais pescaria. Menos burocracia.</h1>
+        <p class="mt-4 max-w-xl text-lg text-ink-muted">
+          O iFishing coloca seu perfil na frente de pescadores que procuram guia de verdade. Agenda integrada, clientes verificados e tudo registrado no app, sem combinado perdido no WhatsApp.
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <div class="relative w-full max-w-[280px] rounded-[2.5rem] bg-ink p-2 shadow-card">
+          <img
+            src="/screen-guia.png"
+            alt="Tela de perfil do guia no iFishing"
+            loading="lazy"
+            decoding="async"
+            class="w-full rounded-[2rem]"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page py-20">
+    <h2 class="text-3xl text-ink">Por que entrar no iFishing</h2>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {beneficios.map((b) => (
+        <div class="rounded-card border border-surface-border bg-white p-6">
+          <div class="flex flex-wrap items-center gap-2">
+            <h3 class="text-lg text-ink">{b.title}</h3>
+            {b.badge && (
+              <span class="inline-flex items-center rounded-full bg-brand px-2.5 py-0.5 text-xs font-bold text-white uppercase tracking-wider">{b.badge}</span>
+            )}
+          </div>
+          <p class="mt-2 text-ink-muted">{b.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-ink/[0.02] border-y border-surface-border">
+    <div class="container-page py-20">
+      <h2 class="text-3xl text-ink">Como entrar pra rede</h2>
+      <ol class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {passos.map((p, i) => (
+          <li class="rounded-card border border-surface-border bg-white p-6">
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-light text-brand-dark font-display font-extrabold">{i + 1}</span>
+            <p class="mt-3 text-ink">{p}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="container-page py-20 text-center">
+    <h2 class="text-3xl text-ink">Baixe o app e cadastre-se</h2>
+    <p class="mt-3 text-ink-muted max-w-xl mx-auto">
+      O cadastro de guia é feito direto no iFishing. Baixe agora e crie seu perfil em minutos.
+    </p>
+    <div class="mt-8 flex justify-center"><StoreBadges align="center" /></div>
+  </section>
+</BaseLayout>
