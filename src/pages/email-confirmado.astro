@@ -1,0 +1,47 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import StoreBadges from '~/components/StoreBadges.astro';
+---
+<BaseLayout
+  title="E-mail confirmado"
+  description="Sua conta no iFishing foi ativada com sucesso. Abra o app para fazer login."
+>
+  <section class="bg-gradient-to-b from-brand-light to-white">
+    <div class="container-page py-20 lg:py-28">
+      <div class="max-w-xl mx-auto text-center">
+
+        {/* Check icon */}
+        <div class="mx-auto mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-brand text-white shadow-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl text-ink">E-mail confirmado!</h1>
+        <p class="mt-4 text-lg text-ink-muted">
+          Sua conta no <strong class="text-ink font-semibold">iFishing</strong> está ativa.
+          Agora é só voltar pro app e fazer login com seu e-mail e senha.
+        </p>
+
+        <div class="mt-10 rounded-card border border-surface-border bg-white p-6 text-left">
+          <p class="text-sm font-semibold text-ink-muted uppercase tracking-wider">Próximo passo</p>
+          <ol class="mt-3 space-y-2 text-ink text-sm list-decimal list-inside">
+            <li>Abra o app iFishing no seu celular</li>
+            <li>Toque em <strong>Entrar</strong></li>
+            <li>Informe o e-mail e a senha que você cadastrou</li>
+          </ol>
+        </div>
+
+        <p class="mt-10 text-sm text-ink-muted">Ainda não baixou o app?</p>
+        <div class="mt-4 flex justify-center">
+          <StoreBadges align="center" />
+        </div>
+
+        <p class="mt-10 text-xs text-ink-muted">
+          Está com problemas? Fale com a gente em
+          <a href="/contato" class="text-brand-dark font-semibold underline">contato</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
