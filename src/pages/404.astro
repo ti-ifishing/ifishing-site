@@ -52,22 +52,55 @@ import { SITE } from '~/lib/site';
     const guideMatch = path.match(/^\/guide\/([^/]+)/);
     const chatMatch = path.match(/^\/chat\/(.+)/);
 
-    if (guideMatch || chatMatch) {
-      document.getElementById('not-found').classList.add('hidden');
-      const deep = document.getElementById('deeplink');
-      deep.classList.remove('hidden');
-      const title = document.getElementById('deeplink-title');
-      const subtitle = document.getElementById('deeplink-subtitle');
-      const open = document.getElementById('deeplink-open');
+    if (!guideMatch && !chatMatch) return;
 
-      if (guideMatch) {
-        title.textContent = 'Perfil de guia no iFishing';
-        subtitle.textContent = 'Estamos abrindo o perfil no app. Se nada acontecer, instale o iFishing.';
-      } else {
-        title.textContent = 'Sua conversa no iFishing';
-        subtitle.textContent = 'O chat só funciona dentro do app, abrindo agora pra você.';
-      }
-      open.setAttribute('href', siteUrl + path + window.location.search);
+    // Mostra UI de "abrir no app"
+    document.getElementById('not-found').classList.add('hidden');
+    const deep = document.getElementById('deeplink');
+    deep.classList.remove('hidden');
+    const title = document.getElementById('deeplink-title');
+    const subtitle = document.getElementById('deeplink-subtitle');
+    const openBtn = document.getElementById('deeplink-open');
+
+    let deepLink;
+    if (guideMatch) {
+      const guideId = guideMatch[1];
+      title.textContent = 'Perfil de guia no iFishing';
+      subtitle.textContent = 'Abrindo o perfil no app...';
+      deepLink = 'ifishing://guide/' + guideId;
+    } else {
+      const slug = chatMatch[1];
+      title.textContent = 'Sua conversa no iFishing';
+      subtitle.textContent = 'Abrindo a conversa no app...';
+      deepLink = 'ifishing://chat/' + slug;
     }
+    openBtn.setAttribute('href', deepLink);
+
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (!isMobile) {
+      // Desktop: não dispara deep link; só mostra a UI com botões manuais.
+      subtitle.textContent = 'Esse link foi feito pra abrir no celular. Baixe o app pra ver o conteúdo.';
+      return;
+    }
+
+    // Mobile: tenta abrir o app via custom scheme.
+    // Se o app não estiver instalado e ninguém clicar manualmente em
+    // ~2s, redireciona pra página de download.
+    let appOpened = false;
+    const onVisibilityChange = () => {
+      if (document.hidden) appOpened = true;
+    };
+    document.addEventListener('visibilitychange', onVisibilityChange);
+
+    // Dispara o deep link
+    window.location.href = deepLink;
+
+    // Fallback: depois de 2.2s, se ainda estamos visíveis, vai pra /baixar
+    setTimeout(() => {
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      if (!appOpened && !document.hidden) {
+        window.location.href = '/baixar/';
+      }
+    }, 2200);
   })();
 </script>
