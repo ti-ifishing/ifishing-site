@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["TEAMID.com.ifishingsolutions.ifishingapp"],
+        "appIDs": ["XANMNBTR62.com.ifishing.app"],
         "components": [
           { "/": "/guide/*", "comment": "Detalhe do guia" },
           { "/": "/chat/*",  "comment": "Chat" }
@@ -11,6 +11,6 @@
     ]
   },
   "webcredentials": {
-    "apps": ["TEAMID.com.ifishingsolutions.ifishingapp"]
+    "apps": ["XANMNBTR62.com.ifishing.app"]
   }
 }

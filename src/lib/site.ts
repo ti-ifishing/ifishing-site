@@ -16,9 +16,11 @@ export const SITE = {
   },
   app: {
     appStoreUrl: 'https://apps.apple.com/br/app/ifishing/id000000000',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.ifishingsolutions.ifishingapp',
-    iosBundleId: 'com.ifishingsolutions.ifishingapp',
-    androidPackage: 'com.ifishingsolutions.ifishingapp',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.ifishing.app',
+    iosBundleId: 'com.ifishing.app',
+    androidPackage: 'com.ifishing.app',
+    /** Apple Team ID — usado em apple-app-site-association pra Universal Links */
+    iosTeamId: 'XANMNBTR62',
   },
   social: {
     instagram: 'https://instagram.com/ifishing.app',
