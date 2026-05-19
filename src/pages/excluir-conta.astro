@@ -20,26 +20,25 @@ const mailLink = `mailto:${SITE.supportEmail}?subject=${encodeURIComponent('Excl
       <div class="lg:col-span-2 space-y-10">
         <div>
           <h2 class="text-2xl text-ink">Como solicitar</h2>
+          <p class="mt-3 text-ink-muted">Envie sua solicitação por WhatsApp ou e-mail informando o <strong class="text-ink">e-mail</strong> e o <strong class="text-ink">telefone cadastrados</strong> no app. A gente confirma sua identidade e processa a exclusão em até <strong class="text-ink">30 dias</strong>.</p>
           <ol class="mt-4 space-y-4">
             <li class="rounded-card border border-surface-border bg-white p-5">
               <div class="flex items-start gap-3">
                 <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-light text-brand-dark font-display font-extrabold">1</span>
-                <div>
-                  <h3 class="text-lg text-ink">Pelo próprio app (recomendado)</h3>
-                  <p class="mt-1 text-ink-muted">Abra o iFishing e vá em <em>Perfil → Configurações → Conta → Excluir conta</em>. Confirme a operação e sua conta será encerrada na hora.</p>
+                <div class="flex-1">
+                  <h3 class="text-lg text-ink">WhatsApp (mais rápido)</h3>
+                  <p class="mt-1 text-ink-muted">Chama no nosso WhatsApp pedindo a exclusão. Já abre uma conversa com a mensagem pronta.</p>
+                  <a href={waLink} target="_blank" rel="noopener" class="btn-primary !py-2 !px-4 text-sm mt-3 inline-flex">Abrir WhatsApp {SITE.whatsapp.display}</a>
                 </div>
               </div>
             </li>
             <li class="rounded-card border border-surface-border bg-white p-5">
               <div class="flex items-start gap-3">
                 <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-light text-brand-dark font-display font-extrabold">2</span>
-                <div>
-                  <h3 class="text-lg text-ink">Por WhatsApp ou e-mail</h3>
-                  <p class="mt-1 text-ink-muted">Se preferir, envie sua solicitação por um dos canais abaixo informando o e-mail e o telefone cadastrados. A gente confirma e processa em até <strong class="text-ink">30 dias</strong>.</p>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <a href={waLink} target="_blank" rel="noopener" class="btn-primary !py-2 !px-4 text-sm">WhatsApp {SITE.whatsapp.display}</a>
-                    <a href={mailLink} class="btn-secondary !py-2 !px-4 text-sm">{SITE.supportEmail}</a>
-                  </div>
+                <div class="flex-1">
+                  <h3 class="text-lg text-ink">E-mail</h3>
+                  <p class="mt-1 text-ink-muted">Se preferir formalizar por escrito, envia pra gente. Já abre o seu e-mail com assunto e modelo preenchidos.</p>
+                  <a href={mailLink} class="btn-secondary !py-2 !px-4 text-sm mt-3 inline-flex">Enviar e-mail pra {SITE.supportEmail}</a>
                 </div>
               </div>
             </li>
@@ -87,7 +86,7 @@ const mailLink = `mailto:${SITE.supportEmail}?subject=${encodeURIComponent('Excl
 
         <div>
           <h2 class="text-2xl text-ink">Prazo</h2>
-          <p class="mt-3 text-ink-muted">Solicitações pelo app são processadas <strong class="text-ink">imediatamente</strong>. Solicitações por WhatsApp ou e-mail são processadas em até <strong class="text-ink">30 dias</strong> a contar da confirmação da identidade.</p>
+          <p class="mt-3 text-ink-muted">Solicitações são processadas em até <strong class="text-ink">30 dias</strong> a contar da confirmação da sua identidade. Em geral, finalizamos em <strong class="text-ink">2 a 5 dias úteis</strong>.</p>
         </div>
       </div>
 
