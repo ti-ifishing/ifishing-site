@@ -15,7 +15,7 @@ export const SITE = {
     cnpj: '59.279.818/0001-38',
   },
   app: {
-    appStoreUrl: 'https://apps.apple.com/br/app/ifishing/id000000000',
+    appStoreUrl: 'https://apps.apple.com/br/app/ifishing-guias-de-pesca/id6769904280',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.ifishing.app',
     iosBundleId: 'com.ifishing.app',
     androidPackage: 'com.ifishing.app',
