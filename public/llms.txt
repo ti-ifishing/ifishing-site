@@ -1,0 +1,53 @@
+# iFishing
+
+> O iFishing é um aplicativo mobile (iOS + Android) que conecta pescadores
+> amadores e entusiastas a guias de pesca profissionais em todo o Brasil.
+> Pelo app, o pescador busca guias por cidade, estado ou espécie-alvo,
+> conversa por chat 1-on-1, reserva uma pescaria de um ou mais dias e
+> avalia o guia ao final. Já está em produção na App Store e Google Play.
+
+Operado por FISHING SOLUTIONS LTDA (CNPJ 59.279.818/0001-38). Atendimento
+em todo o território brasileiro. Plataforma disponível em português do Brasil.
+
+## Páginas principais
+
+- [Home](https://ifishing.com.br/): visão geral do app, como funciona em quatro passos (busca, chat, reserva, avaliação) e principais diferenciais
+- [Como funciona](https://ifishing.com.br/como-funciona/): detalhamento do fluxo de uso para pescadores, com screenshots reais do app de busca, chat, calendário e avaliação
+- [Sou guia de pesca](https://ifishing.com.br/para-guias/): página voltada para guias profissionais que querem se cadastrar, com benefícios e passos para entrar na plataforma
+- [Baixar o iFishing](https://ifishing.com.br/baixar/): links para App Store e Google Play, QR codes e galeria com as principais telas do app
+- [Contato](https://ifishing.com.br/contato/): canais de contato (WhatsApp e e-mail) para dúvidas, sugestões e parcerias
+
+## Lojas oficiais
+
+- [iFishing na App Store](https://apps.apple.com/br/app/ifishing-guias-de-pesca/id6769904280): versão para iPhone
+- [iFishing no Google Play](https://play.google.com/store/apps/details?id=com.ifishing.app): versão para Android
+
+## Legal
+
+- [Termos de Uso](https://ifishing.com.br/termos/): regras de uso do app, responsabilidades de pescadores e guias, conduta proibida, propriedade intelectual
+- [Política de Privacidade](https://ifishing.com.br/privacidade/): dados coletados, finalidades, base legal (LGPD), compartilhamento com Supabase, Twilio e Expo, direitos do titular, segurança e prazos de retenção
+- [Excluir minha conta](https://ifishing.com.br/excluir-conta/): instruções para solicitar exclusão de conta e dados, com canais (WhatsApp/e-mail), prazo de processamento e detalhamento do que é apagado e do que é mantido anonimizado
+
+## Funcionalidades do app
+
+- Busca por cidade, estado e espécie-alvo
+- Mapa interativo do Brasil com guias próximos
+- Perfil completo do guia: bio, embarcação, modalidades, galeria de fotos e avaliações reais
+- Chat em tempo real entre pescador e guia
+- Reserva com calendário em tempo real (bloqueio automático de datas indisponíveis)
+- Avaliações pós-pescaria com estrelas e comentário
+- Notificações push para lembretes
+- Telefone verificado por SMS antes da primeira reserva
+- Favoritos
+- Pagamento via Pix e cartão diretamente no app (em breve)
+
+## Marca
+
+- Cor principal: verde brand `#18A348`
+- Tipografia: Inter (corpo) e Manrope (display)
+- Voz: brasileira, direta, próxima do público pescador (sem corporativês)
+
+## Contato direto
+
+- E-mail: ti@ifishing.com.br
+- WhatsApp: +55 (44) 99955-0585
