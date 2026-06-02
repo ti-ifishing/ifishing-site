@@ -13,13 +13,13 @@ const screenshots: Array<{ src: string; alt: string; caption: string }> = [
 ---
 <BaseLayout
   title="Baixar o iFishing"
-  description="Baixe o iFishing na App Store e no Google Play. App para conectar pescadores e guias em todo o Brasil."
+  description="Baixe o iFishing na App Store (iPhone). Versão Android chegando em breve no Google Play. App para conectar pescadores e guias em todo o Brasil."
 >
   <section class="bg-gradient-to-b from-brand-light to-white">
     <div class="container-page py-16 lg:py-20 text-center">
       <h1 class="text-4xl sm:text-5xl text-ink">Baixe o iFishing</h1>
       <p class="mt-3 max-w-xl mx-auto text-lg text-ink-muted">
-        Disponível pra iPhone e Android. Crie sua conta em menos de um minuto e veja os guias de pesca disponíveis na sua região.
+        Já disponível pra iPhone — a versão Android chega em breve. Crie sua conta em menos de um minuto e veja os guias de pesca disponíveis na sua região.
       </p>
       <div class="mt-10 grid gap-6 sm:grid-cols-2 max-w-2xl mx-auto">
         <div class="rounded-card border border-surface-border bg-white p-6 flex flex-col items-center">
@@ -39,13 +39,15 @@ const screenshots: Array<{ src: string; alt: string; caption: string }> = [
           <p class="mt-6 text-sm text-ink-muted">ou aponte a câmera pro QR code</p>
           <img src="/qr-appstore.png" alt="QR code para baixar o iFishing na App Store" width="160" height="160" class="mt-3 h-40 w-40 rounded-lg bg-white p-2 ring-1 ring-surface-border" />
         </div>
-        <div class="rounded-card border border-surface-border bg-white p-6 flex flex-col items-center">
-          <a
-            href={SITE.app.playStoreUrl}
-            target="_blank"
-            rel="noopener"
-            aria-label="Baixar o iFishing no Google Play"
-            class="inline-flex items-center gap-3 rounded-2xl bg-ink px-5 h-14 text-white transition hover:bg-black"
+        <div class="relative overflow-hidden rounded-card border border-surface-border bg-white p-6 flex flex-col items-center">
+          <span
+            class="pointer-events-none absolute right-[-44px] top-7 rotate-45 select-none bg-warning px-12 py-1 text-xs font-display font-extrabold uppercase tracking-widest text-white shadow-sm"
+          >
+            Em breve
+          </span>
+          <div
+            aria-label="iFishing no Google Play — em breve"
+            class="inline-flex items-center gap-3 rounded-2xl bg-ink px-5 h-14 text-white opacity-50 grayscale cursor-not-allowed"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-7 w-7" aria-hidden="true">
               <path fill="#34D399" d="M3.6 2.3 13.5 12 3.6 21.7c-.4-.3-.6-.8-.6-1.4V3.7c0-.6.2-1.1.6-1.4z"/>
@@ -57,9 +59,9 @@ const screenshots: Array<{ src: string; alt: string; caption: string }> = [
               <span class="text-[10px] uppercase tracking-wider opacity-70">Disponível no</span>
               <span class="font-display text-base font-extrabold leading-tight">Google Play</span>
             </span>
-          </a>
-          <p class="mt-6 text-sm text-ink-muted">ou aponte a câmera pro QR code</p>
-          <img src="/qr-playstore.png" alt="QR code para baixar o iFishing no Google Play" width="160" height="160" class="mt-3 h-40 w-40 rounded-lg bg-white p-2 ring-1 ring-surface-border" />
+          </div>
+          <p class="mt-6 text-sm font-medium text-ink">Chegando em breve para Android</p>
+          <p class="mt-1 max-w-[16rem] text-center text-sm text-ink-muted">A versão Android está em revisão na Google Play. Enquanto isso, baixe pelo iPhone.</p>
         </div>
       </div>
     </div>
