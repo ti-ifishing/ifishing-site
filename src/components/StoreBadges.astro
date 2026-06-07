@@ -3,15 +3,18 @@ import { SITE } from '~/lib/site';
 
 interface Props {
   align?: 'start' | 'center';
+  mobileCenter?: boolean;
   size?: 'sm' | 'md';
 }
 
-const { align = 'start', size = 'md' } = Astro.props;
+const { align = 'start', mobileCenter = false, size = 'md' } = Astro.props;
 const height = size === 'sm' ? 'h-12' : 'h-14';
 ---
 <div class:list={[
   'flex flex-wrap gap-3',
-  align === 'center' ? 'justify-center' : 'justify-start',
+  mobileCenter
+    ? 'justify-center lg:justify-start'
+    : align === 'center' ? 'justify-center' : 'justify-start',
 ]}>
   <a
     href={SITE.app.appStoreUrl}
