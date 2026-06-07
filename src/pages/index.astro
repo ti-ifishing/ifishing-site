@@ -39,7 +39,7 @@ const features: Feature[] = [
   },
   {
     title: 'Guias verificados',
-    text: 'Telefone validado por SMS, perfil completo com bio, embarcação e galeria de fotos. Sem perfil vazio ou sem identidade.',
+    text: 'Telefone validado por SMS e Carteira de Pesca Profissional conferida pela nossa equipe. Procure o selo azul — é garantia de profissional real.',
   },
   {
     title: 'Reservas organizadas',
@@ -73,7 +73,7 @@ const features: Feature[] = [
         <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-muted">
           <span class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-brand"><polyline points="20 6 9 17 4 12"/></svg> Chat e reserva no app</span>
           <span class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-brand"><polyline points="20 6 9 17 4 12"/></svg> Avaliações reais</span>
-          <span class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-brand"><polyline points="20 6 9 17 4 12"/></svg> Telefone verificado</span>
+          <span class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-brand"><polyline points="20 6 9 17 4 12"/></svg> Guias com Selo Verificado</span>
         </div>
       </div>
       <div class="relative">
@@ -119,6 +119,65 @@ const features: Feature[] = [
           <p class="mt-2 text-ink-muted">{f.text}</p>
         </div>
       ))}
+    </div>
+  </section>
+
+  <section class="container-page py-20">
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 rounded-full bg-brand-light px-3 py-1 text-xs font-semibold text-brand-dark">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-brand"></span>
+          Muito além da reserva
+        </span>
+        <h2 class="mt-4 text-3xl sm:text-4xl text-ink">Ferramentas pra pescar no horário certo</h2>
+        <p class="mt-3 text-lg text-ink-muted">Solunar, meteorologia e mapa de guias integrados — tudo no mesmo app, sem precisar de outro.</p>
+        <ul class="mt-8 space-y-6">
+          <li class="flex gap-4">
+            <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-light text-brand">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </span>
+            <div>
+              <p class="font-semibold text-ink">Atividade dos peixes (solunar)</p>
+              <p class="mt-1 text-sm text-ink-muted">Índice diário de 0 a 100 com gráfico por hora, períodos maiores e menores, fase da lua, nascer e pôr do sol e da lua. Para qualquer cidade do Brasil.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-light text-brand">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+            </span>
+            <div>
+              <p class="font-semibold text-ink">Meteorologia hora a hora</p>
+              <p class="mt-1 text-sm text-ink-muted">Temperatura, chuva, pressão, umidade, índice UV, vento com direção e rajadas. Gráfico das próximas horas em tempo real, para o ponto de pesca do guia.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-light text-brand">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div>
+              <p class="font-semibold text-ink">Mapa de guias</p>
+              <p class="mt-1 text-sm text-ink-muted">Descubra guias próximos de você no mapa interativo com pins por região em todo o Brasil.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-light text-brand">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </span>
+            <div>
+              <p class="font-semibold text-ink">Favoritos</p>
+              <p class="mt-1 text-sm text-ink-muted">Salve os guias que você curtiu para acessar rapidinho na próxima pescaria.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="flex justify-center gap-4 sm:gap-6">
+        <div class="relative w-full max-w-[180px] rounded-[2.5rem] bg-ink p-2 shadow-card">
+          <img src="/screen-solunar.png" alt="Tela de atividade dos peixes com índice solunar e gráfico por hora no iFishing" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
+        </div>
+        <div class="relative w-full max-w-[180px] rounded-[2.5rem] bg-ink p-2 shadow-card">
+          <img src="/screen-meteo.png" alt="Tela de meteorologia com condições atuais e previsão hora a hora no iFishing" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
+        </div>
+      </div>
     </div>
   </section>
 

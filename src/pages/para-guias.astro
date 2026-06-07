@@ -22,6 +22,10 @@ const beneficios: Beneficio[] = [
     text: 'Foto, bio, embarcação, modalidades e galeria. Mostra seu trampo do jeito certo pra quem está procurando guia.',
   },
   {
+    title: 'Selo de Guia Verificado',
+    text: 'Envie sua Carteira de Pesca Profissional para análise da nossa equipe. Aprovado, seu perfil ganha um selo azul que aumenta a confiança do pescador na hora de contratar.',
+  },
+  {
     title: 'Cliente verificado',
     text: 'O pescador valida o telefone por SMS antes de reservar. Reduz o risco de furo.',
   },
@@ -31,7 +35,11 @@ const beneficios: Beneficio[] = [
   },
   {
     title: 'Chat dentro do app',
-    text: 'Tira-dúvida, combinação de roteiro e logística, tudo em um lugar só.',
+    text: 'Tira-dúvida e combinação de roteiro em um lugar só. Com confirmação de leitura, indicador de "digitando" e resposta a mensagens específicas.',
+  },
+  {
+    title: 'Notificações em tempo real',
+    text: 'Receba alertas de novas mensagens de pescadores, solicitações de reserva e atualizações — mesmo com o app fechado.',
   },
   {
     title: 'Pagamento no app',
@@ -42,7 +50,7 @@ const beneficios: Beneficio[] = [
 
 const passos = [
   'Baixe o iFishing e crie sua conta como guia',
-  'Monte seu perfil com foto, bio, embarcação e modalidades',
+  'Monte seu perfil com foto, bio, embarcação e modalidades. Solicite o Selo Verificado enviando sua Carteira de Pesca Profissional.',
   'Seu perfil entra no ar pra pescadores de todo o Brasil',
   'Gerencie agenda e reservas pelo próprio app',
 ];
@@ -63,8 +71,8 @@ const passos = [
       <div class="flex justify-center">
         <div class="relative w-full max-w-[280px] rounded-[2.5rem] bg-ink p-2 shadow-card">
           <img
-            src="/screen-guia.png"
-            alt="Tela de perfil do guia no iFishing"
+            src="/screen-guia-verificado.png"
+            alt="Tela de perfil do guia com Selo Verificado no iFishing"
             loading="lazy"
             decoding="async"
             class="w-full rounded-[2rem]"

@@ -23,6 +23,8 @@ const sections: Section[] = [
     points: [
       'Filtros por cidade, estado e espécie',
       'Mapa interativo com guias próximos',
+      'Previsão do tempo no ponto de pesca de cada guia',
+      'Favoritar guias para acesso rápido',
       'Galeria de fotos das pescarias do guia',
       'Avaliações ordenadas por relevância',
     ],
@@ -34,9 +36,12 @@ const sections: Section[] = [
   {
     eyebrow: '2 · Chat',
     title: 'Converse antes de fechar',
-    body: 'Chat em tempo real direto no app. Combine roteiro, equipamento, ponto de encontro e tudo mais.',
+    body: 'Chat em tempo real direto no app. Combine roteiro, equipamento, ponto de encontro e tudo mais — com recursos que você já conhece do WhatsApp.',
     points: [
-      'Mensagens em tempo real',
+      'Mensagens em tempo real com confirmação de leitura',
+      'Responder e copiar mensagens (segure a mensagem)',
+      'Indicador de "digitando"',
+      'Foto do contato abre em tela cheia',
       'Histórico mantido pra consulta',
     ],
     images: [{ src: '/screen-chat.png', alt: 'Tela de chat 1-on-1 entre pescador e guia no iFishing' }],
@@ -62,6 +67,22 @@ const sections: Section[] = [
       'Moderação contra avaliações abusivas',
     ],
     images: [{ src: '/screen-avaliacoes.png', alt: 'Tela de avaliação pós-pescaria com estrelas e comentário no iFishing' }],
+  },
+  {
+    eyebrow: 'Ferramentas',
+    title: 'Saiba a hora certa de pescar',
+    body: 'Além de conectar você ao guia, o iFishing traz previsão solunar e meteorologia completa pra você planejar a pescaria com mais inteligência — e ainda mostra o tempo no ponto de pesca do guia.',
+    points: [
+      'Índice solunar diário de 0 a 100 com gráfico por hora',
+      'Períodos maiores e menores de atividade dos peixes',
+      'Fase da lua, nascer e pôr do sol e da lua',
+      'Temperatura, chuva, pressão, UV e vento hora a hora',
+      'Previsão no ponto de pesca do guia que você quer contratar',
+    ],
+    images: [
+      { src: '/screen-solunar.png', alt: 'Tela de atividade dos peixes com índice solunar e gráfico de atividade no iFishing' },
+      { src: '/screen-meteo.png', alt: 'Tela de meteorologia com condições atuais e previsão hora a hora no iFishing' },
+    ],
   },
 ];
 
