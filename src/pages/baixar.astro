@@ -2,6 +2,27 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import { SITE } from '~/lib/site';
 
+const appJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  name: 'iFishing — Guias de Pesca',
+  operatingSystem: 'IOS, ANDROID',
+  applicationCategory: 'SportsApplication',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
+  url: SITE.app.appStoreUrl,
+  description:
+    'O iFishing conecta pescadores a guias de pesca profissionais em todo o Brasil. Busque guias por cidade ou espécie-alvo, converse por chat, reserve e avalie.',
+  featureList: 'Busca de guias de pesca, Chat em tempo real, Reserva de pescaria, Calendário solunar, Previsão meteorológica, Mapa de guias, Avaliações verificadas, Favoritos',
+  screenshot: [
+    { '@type': 'ImageObject', url: `${SITE.url}/screen-busca.png` },
+    { '@type': 'ImageObject', url: `${SITE.url}/screen-chat.png` },
+    { '@type': 'ImageObject', url: `${SITE.url}/screen-calendario.png` },
+    { '@type': 'ImageObject', url: `${SITE.url}/screen-solunar.png` },
+    { '@type': 'ImageObject', url: `${SITE.url}/screen-meteo.png` },
+  ],
+  inLanguage: 'pt-BR',
+};
+
 const screenshots: Array<{ src: string; alt: string; caption: string }> = [
   { src: '/screen-busca.png', alt: 'Tela de busca de guias no iFishing', caption: 'Lista de guias' },
   { src: '/screen-busca2.png', alt: 'Mapa do Brasil com pins de guias no iFishing', caption: 'Mapa do Brasil' },
@@ -15,6 +36,7 @@ const screenshots: Array<{ src: string; alt: string; caption: string }> = [
   title="Baixar o iFishing"
   description="Baixe o iFishing na App Store (iPhone). Versão Android chegando em breve no Google Play. App para conectar pescadores e guias em todo o Brasil."
 >
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(appJsonLd)} is:inline />
   <section class="bg-gradient-to-b from-brand-light to-white">
     <div class="container-page py-16 lg:py-20 text-center">
       <h1 class="text-4xl sm:text-5xl text-ink">Baixe o iFishing</h1>

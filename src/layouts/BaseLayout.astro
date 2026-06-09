@@ -15,20 +15,31 @@ interface Props {
 
 const { title, description, image, noindex, canonical } = Astro.props;
 
-const orgJsonLd = {
+const siteJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: SITE.name,
-  url: SITE.url,
-  logo: `${SITE.url}/icon-1024.png`,
-  sameAs: Object.values(SITE.social).filter(Boolean),
-  contactPoint: {
-    '@type': 'ContactPoint',
-    email: SITE.supportEmail,
-    contactType: 'customer support',
-    areaServed: 'BR',
-    availableLanguage: ['pt-BR'],
-  },
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: SITE.name,
+      url: SITE.url,
+      logo: `${SITE.url}/icon-1024.png`,
+      sameAs: Object.values(SITE.social).filter(Boolean),
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: SITE.supportEmail,
+        contactType: 'customer support',
+        areaServed: 'BR',
+        availableLanguage: ['pt-BR'],
+      },
+    },
+    {
+      '@type': 'WebSite',
+      name: SITE.name,
+      url: SITE.url,
+      description: SITE.description,
+      inLanguage: 'pt-BR',
+    },
+  ],
 };
 ---
 <!DOCTYPE html>
@@ -49,7 +60,8 @@ const orgJsonLd = {
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
     />
     <SEO {title} {description} {image} {noindex} {canonical} />
-    <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} is:inline />
+    <script type="application/ld+json" set:html={JSON.stringify(siteJsonLd)} is:inline />
+    <slot name="head" />
   </head>
   <body class="min-h-screen flex flex-col">
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-brand focus:px-3 focus:py-2 focus:text-white">Pular para o conteúdo</a>
