@@ -1,0 +1,17 @@
+---
+import { SITE } from '~/lib/site';
+const url = SITE.app.playStoreUrl;
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content={`0;url=${url}`} />
+    <title>Redirecionando para o Google Play...</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <script define:vars={{ url }}>window.location.replace(url);</script>
+  </head>
+  <body>
+    <a href={url}>Clique aqui se não for redirecionado automaticamente.</a>
+  </body>
+</html>

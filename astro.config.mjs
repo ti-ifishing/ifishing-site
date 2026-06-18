@@ -5,10 +5,6 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://ifishing.com.br',
   trailingSlash: 'ignore',
-  redirects: {
-    '/ios': 'https://apps.apple.com/br/app/ifishing-guias-de-pesca/id6769904280',
-    '/android': 'https://play.google.com/store/apps/details?id=com.ifishing.app',
-  },
   build: {
     format: 'directory',
   },
