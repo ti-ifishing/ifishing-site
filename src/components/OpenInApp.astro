@@ -28,12 +28,7 @@ const { kind, label, subtitle } = Astro.props;
         <a id="open-in-app" href="#" class="btn-primary w-full">Abrir no iFishing</a>
         <div class="flex flex-col sm:flex-row gap-3">
           <a class="btn-secondary flex-1" href={SITE.app.appStoreUrl} target="_blank" rel="noopener">App Store</a>
-          <div class="relative flex-1">
-            <span class="pointer-events-none absolute -top-2.5 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap rounded-full bg-warning px-2 py-0.5 text-[10px] font-display font-extrabold uppercase tracking-wider text-white shadow-sm">
-              Em breve
-            </span>
-            <div class="btn-secondary w-full text-center opacity-50 grayscale cursor-not-allowed" aria-label="Google Play — em breve">Google Play</div>
-          </div>
+          <a class="btn-secondary flex-1 text-center" href={SITE.app.playStoreUrl} target="_blank" rel="noopener">Google Play</a>
         </div>
       </div>
     </div>
