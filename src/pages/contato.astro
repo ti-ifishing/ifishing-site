@@ -1,47 +1,21 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import { SITE } from '~/lib/site';
-
-const waLink = `https://wa.me/${SITE.whatsapp.e164}`;
 ---
 <BaseLayout
   title="Contato"
-  description="Fale com o iFishing por e-mail ou WhatsApp. Suporte e parcerias."
+  description="Fale com o iFishing por e-mail. Suporte e parcerias."
 >
   <section class="container-page py-16">
     <h1 class="text-4xl sm:text-5xl text-ink">Fala com a gente</h1>
     <p class="mt-3 max-w-2xl text-lg text-ink-muted">
-      Dúvida, sugestão ou parceria: chama no WhatsApp ou manda e-mail. A gente responde rápido.
+      Dúvida, sugestão ou parceria: manda um e-mail. A gente responde rápido.
     </p>
 
-    <div class="mt-12 grid gap-6 sm:grid-cols-2">
-      <a
-        href={waLink}
-        target="_blank"
-        rel="noopener"
-        class="group rounded-card border border-surface-border bg-white p-8 transition hover:border-brand hover:shadow-card"
-      >
-        <div class="flex items-center gap-3">
-          <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-light text-brand-dark">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.768.967-.942 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.02 2C6.486 2 2 6.486 2 12.02c0 1.752.458 3.398 1.255 4.819L2 22l5.331-1.236A9.964 9.964 0 0 0 12.02 22c5.534 0 10.02-4.486 10.02-10.02C22.04 6.486 17.554 2 12.02 2z"/>
-            </svg>
-          </span>
-          <div>
-            <p class="text-sm font-semibold text-ink-muted uppercase tracking-wider">WhatsApp</p>
-            <p class="text-xl font-display font-extrabold text-ink">{SITE.whatsapp.display}</p>
-          </div>
-        </div>
-        <p class="mt-4 text-ink-muted text-sm">Chamada direta com o time. Mais rápido pra dúvidas e suporte.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-brand-dark text-sm font-semibold">
-          Abrir conversa
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 transition group-hover:translate-x-0.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </span>
-      </a>
-
+    <div class="mt-12 max-w-sm">
       <a
         href={`mailto:${SITE.supportEmail}`}
-        class="group rounded-card border border-surface-border bg-white p-8 transition hover:border-brand hover:shadow-card"
+        class="group rounded-card border border-surface-border bg-white p-8 transition hover:border-brand hover:shadow-card block"
       >
         <div class="flex items-center gap-3">
           <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-light text-brand-dark">
@@ -52,7 +26,7 @@ const waLink = `https://wa.me/${SITE.whatsapp.e164}`;
             <p class="text-xl font-display font-extrabold text-ink break-all">{SITE.supportEmail}</p>
           </div>
         </div>
-        <p class="mt-4 text-ink-muted text-sm">Pra assuntos formais e parcerias.</p>
+        <p class="mt-4 text-ink-muted text-sm">Pra dúvidas, sugestões e parcerias.</p>
         <span class="mt-4 inline-flex items-center gap-1 text-brand-dark text-sm font-semibold">
           Enviar e-mail
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 transition group-hover:translate-x-0.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
