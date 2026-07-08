@@ -2,8 +2,7 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import { SITE } from '~/lib/site';
 
-const waLink = `https://wa.me/${SITE.whatsapp.e164}?text=${encodeURIComponent('Olá, quero excluir minha conta no iFishing.')}`;
-const mailLink = `mailto:${SITE.supportEmail}?subject=${encodeURIComponent('Excluir minha conta')}&body=${encodeURIComponent('Olá, quero excluir minha conta no iFishing.\n\nE-mail cadastrado: \nTelefone cadastrado: ')}`;
+const mailLink = `mailto:${SITE.supportEmail}?subject=${encodeURIComponent('Excluir minha conta')}&body=${encodeURIComponent('Olá, quero excluir minha conta no iFishing.\n\nE-mail cadastrado: ')}`;
 ---
 <BaseLayout
   title="Excluir conta"
@@ -20,29 +19,14 @@ const mailLink = `mailto:${SITE.supportEmail}?subject=${encodeURIComponent('Excl
       <div class="lg:col-span-2 space-y-10">
         <div>
           <h2 class="text-2xl text-ink">Como solicitar</h2>
-          <p class="mt-3 text-ink-muted">Envie sua solicitação por WhatsApp ou e-mail informando o <strong class="text-ink">e-mail</strong> e o <strong class="text-ink">telefone cadastrados</strong> no app. A gente confirma sua identidade e processa a exclusão em até <strong class="text-ink">30 dias</strong>.</p>
-          <ol class="mt-4 space-y-4">
-            <li class="rounded-card border border-surface-border bg-white p-5">
-              <div class="flex items-start gap-3">
-                <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-light text-brand-dark font-display font-extrabold">1</span>
-                <div class="flex-1">
-                  <h3 class="text-lg text-ink">WhatsApp (mais rápido)</h3>
-                  <p class="mt-1 text-ink-muted">Chama no nosso WhatsApp pedindo a exclusão. Já abre uma conversa com a mensagem pronta.</p>
-                  <a href={waLink} target="_blank" rel="noopener" class="btn-primary !py-2 !px-4 text-sm mt-3 inline-flex">Abrir WhatsApp {SITE.whatsapp.display}</a>
-                </div>
-              </div>
-            </li>
-            <li class="rounded-card border border-surface-border bg-white p-5">
-              <div class="flex items-start gap-3">
-                <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-light text-brand-dark font-display font-extrabold">2</span>
-                <div class="flex-1">
-                  <h3 class="text-lg text-ink">E-mail</h3>
-                  <p class="mt-1 text-ink-muted">Se preferir formalizar por escrito, envia pra gente. Já abre o seu e-mail com assunto e modelo preenchidos.</p>
-                  <a href={mailLink} class="btn-secondary !py-2 !px-4 text-sm mt-3 inline-flex">Enviar e-mail pra {SITE.supportEmail}</a>
-                </div>
-              </div>
-            </li>
-          </ol>
+          <p class="mt-3 text-ink-muted">Envie sua solicitação por e-mail informando o <strong class="text-ink">e-mail cadastrado</strong> no app. A gente confirma sua identidade e processa a exclusão em até <strong class="text-ink">30 dias</strong>.</p>
+          <div class="mt-4">
+            <div class="rounded-card border border-surface-border bg-white p-5">
+              <h3 class="text-lg text-ink">E-mail</h3>
+              <p class="mt-1 text-ink-muted">Envia pra gente com seu e-mail cadastrado no assunto. Já abre com assunto e modelo preenchidos.</p>
+              <a href={mailLink} class="btn-primary !py-2 !px-4 text-sm mt-3 inline-flex">Enviar e-mail pra {SITE.supportEmail}</a>
+            </div>
+          </div>
         </div>
 
         <div>
@@ -98,7 +82,6 @@ const mailLink = `mailto:${SITE.supportEmail}?subject=${encodeURIComponent('Excl
             <li><strong>Desenvolvedor:</strong> {SITE.legal.razaoSocial}</li>
             <li><strong>CNPJ:</strong> {SITE.legal.cnpj}</li>
             <li><strong>Contato:</strong> <a href={`mailto:${SITE.supportEmail}`} class="underline">{SITE.supportEmail}</a></li>
-            <li><strong>WhatsApp:</strong> {SITE.whatsapp.display}</li>
           </ul>
         </div>
         <div class="rounded-card border border-surface-border bg-white p-6">
