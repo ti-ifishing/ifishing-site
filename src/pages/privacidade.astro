@@ -5,106 +5,334 @@ import { SITE } from '~/lib/site';
 <LegalLayout
   title="Política de Privacidade"
   description="Como o iFishing coleta, usa e protege seus dados pessoais."
-  lastUpdated="17 de maio de 2026"
+  lastUpdated="07 de julho de 2026"
 >
+
   <p>
-    Esta Política de Privacidade descreve como <strong>{SITE.legal.razaoSocial}</strong>
-    (CNPJ {SITE.legal.cnpj}), operadora do aplicativo <strong>{SITE.name}</strong>, trata
-    dados pessoais dos usuários, em conformidade com a Lei Geral de Proteção de Dados
-    (Lei nº 13.709/2018, LGPD).
+    A <strong>{SITE.legal.razaoSocial}</strong> (CNPJ {SITE.legal.cnpj}),
+    operadora do aplicativo <strong>{SITE.name}</strong> ("<strong>iFishing</strong>",
+    "<strong>nós</strong>" ou "<strong>nosso</strong>"), tem o compromisso com a
+    privacidade e a segurança dos dados pessoais de seus Usuários.
+  </p>
+  <p>
+    Esta Política de Privacidade ("<strong>Política</strong>") descreve como coletamos,
+    usamos, compartilhamos e protegemos seus dados pessoais quando você utiliza o aplicativo
+    iFishing e os serviços relacionados ("<strong>Plataforma</strong>"), em conformidade com
+    a <strong>Lei Geral de Proteção de Dados Pessoais</strong> (Lei nº 13.709/2018 —
+    "<strong>LGPD</strong>") e demais normas aplicáveis.
+  </p>
+  <p>
+    Ao criar uma conta ou utilizar a Plataforma, você confirma que leu e compreendeu esta
+    Política. Leia-a com atenção antes de utilizar nossos serviços.
   </p>
 
-  <h2>1. Quais dados coletamos</h2>
+  <h2>1. Controlador de Dados</h2>
+  <p>
+    O controlador dos seus dados pessoais, nos termos da LGPD, é:
+  </p>
   <ul>
-    <li><strong>Dados de cadastro</strong>: nome completo, e-mail, telefone celular, foto de perfil (opcional).</li>
-    <li><strong>Dados de verificação</strong>: código enviado por SMS via Twilio para validar o número.</li>
-    <li><strong>Dados de uso</strong>: pescarias visualizadas, favoritos, mensagens trocadas no chat, avaliações.</li>
-    <li><strong>Localização aproximada</strong>: somente quando você autoriza, para sugerir guias próximos.</li>
-    <li><strong>Dados de dispositivo</strong>: modelo, sistema operacional, token de push notification (Expo).</li>
-    <li><strong>Dados adicionais de guias</strong>: bio, embarcação, áreas de atuação, modalidades, galeria.</li>
+    <li><strong>Razão social:</strong> {SITE.legal.razaoSocial}</li>
+    <li><strong>CNPJ:</strong> {SITE.legal.cnpj}</li>
+    <li><strong>Site:</strong> <a href={SITE.url}>{SITE.url}</a></li>
+    <li><strong>E-mail do Encarregado (DPO):</strong> <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a></li>
   </ul>
 
-  <h2>2. Finalidades do tratamento</h2>
+  <h2>2. Dados Pessoais que Coletamos</h2>
+  <p>Coletamos diferentes categorias de dados conforme a forma de interação com a Plataforma:</p>
+
+  <h3>2.1 Dados fornecidos diretamente por você</h3>
   <ul>
-    <li>Permitir o uso do App (criar conta, autenticar, conectar pescadores e guias).</li>
-    <li>Verificar a identidade básica via SMS, reduzindo fraude.</li>
-    <li>Enviar notificações sobre reservas, mensagens e lembretes (push e e-mail).</li>
-    <li>Melhorar o serviço por meio de análises agregadas e anônimas.</li>
-    <li>Cumprir obrigações legais e regulatórias.</li>
+    <li><strong>Dados de cadastro:</strong> nome completo, endereço de e-mail, número de telefone celular, data de nascimento.</li>
+    <li><strong>Dados de perfil:</strong> foto de perfil, cidade, estado, biografia (campos opcionais).</li>
+    <li><strong>Dados adicionais do Guia:</strong> descrição dos serviços, modalidades de pesca oferecidas, tipo e dados da embarcação, áreas de atuação, galeria de fotos e vídeos, preços.</li>
+    <li><strong>Conteúdo gerado:</strong> avaliações, comentários, mensagens trocadas no chat da Plataforma.</li>
+    <li><strong>Dados de reserva:</strong> datas, número de participantes, observações, histórico de reservas.</li>
+    <li><strong>Comunicações com o suporte:</strong> mensagens enviadas ao iFishing para atendimento.</li>
   </ul>
 
-  <h2>3. Bases legais (Art. 7º da LGPD)</h2>
+  <h3>2.2 Dados coletados automaticamente</h3>
   <ul>
-    <li><strong>Execução de contrato</strong>: para viabilizar o uso do App e a intermediação entre pescador e guia.</li>
-    <li><strong>Consentimento</strong>: para envio de comunicações promocionais e uso de localização.</li>
-    <li><strong>Legítimo interesse</strong>: para segurança, prevenção a fraude e melhoria do serviço.</li>
-    <li><strong>Cumprimento de obrigação legal</strong>: quando exigido por lei.</li>
+    <li><strong>Dados de dispositivo:</strong> modelo e fabricante do dispositivo, sistema operacional e versão, identificadores únicos de dispositivo.</li>
+    <li><strong>Dados de uso:</strong> páginas e perfis visitados, buscas realizadas, funcionalidades utilizadas, tempo de sessão, cliques em banners e notificações.</li>
+    <li><strong>Token de notificação push:</strong> identificador gerado pelo sistema Expo para entrega de notificações no seu dispositivo.</li>
+    <li><strong>Registros de acesso (logs):</strong> endereço IP, data e horário de acesso, tipo de navegador ou aplicativo, conforme exigido pelo Marco Civil da Internet (Lei nº 12.965/2014).</li>
+    <li><strong>Dados de falhas e desempenho:</strong> relatórios de erros e travamentos para fins de melhoria técnica.</li>
   </ul>
 
-  <h2>4. Compartilhamento com terceiros</h2>
-  <p>O iFishing não vende dados pessoais. Compartilhamos apenas com:</p>
+  <h3>2.3 Dados de localização</h3>
   <ul>
-    <li><strong>Supabase</strong>: provedor de banco de dados, autenticação e armazenamento (servidores nos EUA).</li>
-    <li><strong>Twilio</strong>: envio de SMS para verificação de telefone.</li>
-    <li><strong>Expo</strong>: entrega de notificações push.</li>
-    <li><strong>Apple e Google</strong>: distribuição do App pelas lojas oficiais.</li>
-    <li><strong>Autoridades</strong>: mediante ordem judicial ou requisição legal cabível.</li>
+    <li><strong>Localização aproximada (cidade/estado):</strong> informada no cadastro para sugerir guias próximos.</li>
+    <li><strong>Localização em tempo real (GPS):</strong> somente se você conceder permissão explícita no dispositivo. Utilizada para exibir guias próximos a você. Você pode revogar esta permissão a qualquer momento nas configurações do dispositivo.</li>
   </ul>
 
-  <h2>5. Transferência internacional</h2>
-  <p>
-    Parte da infraestrutura está hospedada fora do Brasil (EUA, Supabase). Adotamos medidas
-    contratuais e de segurança da informação para garantir nível de proteção compatível com
-    a LGPD nessas transferências.
-  </p>
-
-  <h2>6. Por quanto tempo guardamos seus dados</h2>
-  <p>
-    Mantemos seus dados pelo prazo necessário às finalidades acima e enquanto durar o vínculo
-    contratual. Após o encerramento da conta, dados são eliminados ou anonimizados, salvo
-    obrigação legal de retenção (ex.: prazos fiscais e prescricionais).
-  </p>
-
-  <h2>7. Seus direitos (Art. 18 da LGPD)</h2>
-  <p>Como titular, você pode a qualquer momento:</p>
+  <h3>2.4 Dados de verificação</h3>
   <ul>
-    <li>Confirmar a existência de tratamento.</li>
-    <li>Acessar e corrigir seus dados.</li>
-    <li>Solicitar anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade.</li>
-    <li>Solicitar portabilidade.</li>
-    <li>Revogar consentimentos.</li>
-    <li>Informações sobre uso compartilhado de dados.</li>
+    <li><strong>Verificação de telefone:</strong> número de telefone e código OTP enviado via SMS pelo serviço Twilio para confirmar a autenticidade do número.</li>
+  </ul>
+
+  <h3>2.5 Dados que não coletamos</h3>
+  <p>
+    O iFishing <strong>não coleta</strong> dados de cartão de crédito ou bancários diretamente.
+    Quando integrado a meios de pagamento, tais dados são processados exclusivamente pelo
+    provedor de pagamento contratado, sujeito à sua própria política de privacidade.
+  </p>
+
+  <h2>3. Finalidades do Tratamento e Bases Legais</h2>
+  <p>
+    Tratamos seus dados pessoais com base nas hipóteses legais previstas no art. 7º da LGPD,
+    para as seguintes finalidades:
+  </p>
+
+  <h3>3.1 Execução de contrato (art. 7º, V)</h3>
+  <ul>
+    <li>Criar e gerenciar sua Conta.</li>
+    <li>Autenticar seu acesso à Plataforma.</li>
+    <li>Viabilizar o sistema de reservas entre Pescadores e Guias.</li>
+    <li>Possibilitar a comunicação entre Pescador e Guia pelo chat da Plataforma.</li>
+    <li>Processar e registrar reservas, cancelamentos e histórico de atividades.</li>
+    <li>Enviar notificações transacionais sobre o status das reservas (push, SMS e e-mail).</li>
+  </ul>
+
+  <h3>3.2 Legítimo interesse (art. 7º, IX)</h3>
+  <ul>
+    <li>Garantir a segurança, integridade e funcionamento técnico da Plataforma.</li>
+    <li>Prevenir fraudes, acessos não autorizados e comportamentos abusivos.</li>
+    <li>Analisar o uso da Plataforma de forma agregada e anonimizada para melhorar os serviços.</li>
+    <li>Moderar conteúdo publicado por Usuários e investigar denúncias.</li>
+    <li>Enviar lembretes operacionais sobre reservas próximas ou pendentes.</li>
+    <li>Reativar Usuários inativos com notificações ocasionais sobre a Plataforma.</li>
+  </ul>
+
+  <h3>3.3 Consentimento (art. 7º, I)</h3>
+  <ul>
+    <li>Enviar comunicações promocionais, ofertas e novidades do iFishing.</li>
+    <li>Usar sua localização GPS em tempo real para sugestões de guias próximos.</li>
+    <li>Utilizar seu Conteúdo (fotos, depoimentos) em materiais de marketing da Plataforma.</li>
   </ul>
   <p>
-    Para exercer qualquer direito, escreva para <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
-    com a solicitação. Responderemos no prazo da LGPD (até 15 dias para confirmação/acesso).
+    Você pode revogar seu consentimento a qualquer momento nas configurações do App ou pelo
+    e-mail <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>, sem prejuízo da
+    licitude dos tratamentos realizados antes da revogação.
   </p>
 
-  <h2>8. Como exclusão de conta funciona</h2>
+  <h3>3.4 Cumprimento de obrigação legal (art. 7º, II)</h3>
+  <ul>
+    <li>Manter registros de acesso conforme o Marco Civil da Internet.</li>
+    <li>Atender ordens judiciais, requisições de autoridades ou determinações de órgãos reguladores.</li>
+    <li>Cumprir obrigações fiscais e trabalhistas aplicáveis.</li>
+  </ul>
+
+  <h2>4. Compartilhamento de Dados Pessoais</h2>
   <p>
-    Você pode excluir sua conta solicitando pelo WhatsApp ou e-mail informados em <a href="/excluir-conta">ifishing.com.br/excluir-conta</a>. A exclusão remove
-    dados pessoais identificáveis. Avaliações, mensagens em chats e reservas podem ser
-    anonimizadas (não excluídas) para preservar histórico legítimo de outras pessoas envolvidas.
+    O iFishing <strong>não vende, aluga ou comercializa</strong> seus dados pessoais a terceiros.
+    Compartilhamos apenas nas situações e com os destinatários abaixo:
   </p>
 
-  <h2>9. Segurança</h2>
+  <h3>4.1 Entre Usuários da Plataforma</h3>
   <p>
-    Empregamos medidas técnicas e organizacionais para proteger seus dados, incluindo
-    criptografia em trânsito (TLS), autenticação segura, RLS no banco de dados, controle de
-    acesso e monitoramento. Nenhum sistema é 100% inviolável, mas mantemos boas práticas
-    proporcionais aos riscos.
+    Quando o Pescador realiza uma Reserva, seu nome e dados de contato podem ser compartilhados
+    com o Guia para viabilizar a atividade. Da mesma forma, o perfil público do Guia (nome,
+    foto, avaliações, descrição dos serviços) é visível a todos os Usuários da Plataforma.
   </p>
 
-  <h2>10. Crianças e adolescentes</h2>
+  <h3>4.2 Prestadores de serviço (suboperadores)</h3>
   <p>
-    O App é destinado a maiores de 18 anos. Não coletamos intencionalmente dados de crianças.
-    Se identificarmos coleta indevida, removeremos os dados o quanto antes.
+    Compartilhamos dados com parceiros tecnológicos essenciais à operação da Plataforma, que
+    atuam como suboperadores sob nossas instruções e estão sujeitos a obrigações contratuais
+    de confidencialidade e segurança:
+  </p>
+  <ul>
+    <li><strong>Supabase Inc.:</strong> provedor de banco de dados relacional, autenticação e armazenamento de arquivos (servidores nos EUA — AWS). Informações: <a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy</a>.</li>
+    <li><strong>Twilio Inc.:</strong> envio de SMS para verificação de telefone e comunicações operacionais. Informações: <a href="https://www.twilio.com/legal/privacy" target="_blank">twilio.com/legal/privacy</a>.</li>
+    <li><strong>Expo (Expo Technology Inc.):</strong> infraestrutura de entrega de notificações push (tokens de dispositivo). Informações: <a href="https://expo.dev/privacy" target="_blank">expo.dev/privacy</a>.</li>
+    <li><strong>Vercel Inc.:</strong> hospedagem do painel administrativo e site institucional. Informações: <a href="https://vercel.com/legal/privacy-policy" target="_blank">vercel.com/legal/privacy-policy</a>.</li>
+    <li><strong>Apple Inc. e Google LLC:</strong> distribuição do App pelas lojas App Store e Google Play, respectivamente.</li>
+  </ul>
+
+  <h3>4.3 Autoridades e cumprimento legal</h3>
+  <p>
+    Podemos divulgar dados pessoais a autoridades policiais, judiciais ou regulatórias mediante
+    ordem judicial válida, requisição legal fundamentada ou quando acreditarmos de boa-fé que
+    a divulgação é necessária para proteger direitos, segurança de Usuários ou terceiros, ou
+    para cumprir obrigação legal.
   </p>
 
-  <h2>11. Alterações desta Política</h2>
+  <h3>4.4 Reestruturação societária</h3>
   <p>
-    Esta Política pode ser atualizada. Avisaremos sobre mudanças relevantes pelo App ou e-mail.
-    A versão vigente sempre estará disponível em
-    <a href="/privacidade">{SITE.url}/privacidade</a>.
+    Em caso de fusão, aquisição, incorporação ou venda de ativos do iFishing, seus dados poderão
+    ser transferidos ao sucessor, que ficará vinculado a esta Política ou apresentará nova política
+    com antecedência razoável.
   </p>
+
+  <h2>5. Transferência Internacional de Dados</h2>
+  <p>
+    Parte da nossa infraestrutura tecnológica está localizada fora do Brasil, principalmente
+    nos Estados Unidos (Supabase/AWS, Twilio, Expo, Vercel). Nessas transferências, adotamos
+    as seguintes salvaguardas, conforme o art. 33 da LGPD:
+  </p>
+  <ul>
+    <li>Seleção de parceiros que adotam padrões de segurança equivalentes ou superiores aos exigidos pela LGPD.</li>
+    <li>Celebração de cláusulas contratuais de proteção de dados com os suboperadores.</li>
+    <li>Verificação periódica das certificações e conformidade dos parceiros (ISO 27001, SOC 2, etc.).</li>
+  </ul>
+
+  <h2>6. Prazo de Retenção dos Dados</h2>
+  <p>
+    Mantemos seus dados pessoais pelos prazos descritos abaixo:
+  </p>
+  <ul>
+    <li><strong>Durante a vigência da Conta:</strong> dados de cadastro, perfil, reservas e histórico são mantidos enquanto sua Conta estiver ativa.</li>
+    <li><strong>Após o encerramento da Conta:</strong> os dados são eliminados ou anonimizados em até <strong>90 (noventa) dias</strong>, salvo nos casos abaixo.</li>
+    <li><strong>Obrigação legal:</strong> registros de acesso são mantidos por <strong>6 (seis) meses</strong>, conforme o Marco Civil da Internet. Dados fiscais e contábeis são retidos pelo prazo legal aplicável (em geral, 5 anos).</li>
+    <li><strong>Prevenção a fraudes e litígios:</strong> dados necessários à defesa de direitos em eventual processo judicial ou administrativo são mantidos pelo prazo prescricional aplicável.</li>
+    <li><strong>Avaliações e histórico de reservas:</strong> podem ser anonimizados e mantidos para preservar a integridade do sistema de reputação da Plataforma.</li>
+  </ul>
+
+  <h2>7. Seus Direitos como Titular (Art. 18 da LGPD)</h2>
+  <p>
+    Você possui os seguintes direitos em relação aos seus dados pessoais, que podem ser exercidos
+    a qualquer tempo:
+  </p>
+  <ul>
+    <li><strong>Confirmação e acesso:</strong> saber se tratamos seus dados e obter uma cópia dos dados que mantemos sobre você.</li>
+    <li><strong>Correção:</strong> solicitar a atualização ou retificação de dados incompletos, inexatos ou desatualizados.</li>
+    <li><strong>Anonimização, bloqueio ou eliminação:</strong> de dados desnecessários, excessivos ou tratados em desconformidade com a LGPD.</li>
+    <li><strong>Portabilidade:</strong> receber seus dados em formato estruturado para transferência a outro fornecedor de serviço.</li>
+    <li><strong>Eliminação:</strong> solicitar a exclusão dos dados tratados com base em consentimento, ressalvadas as hipóteses de retenção legal.</li>
+    <li><strong>Informação sobre compartilhamento:</strong> saber com quais entidades públicas e privadas compartilhamos seus dados.</li>
+    <li><strong>Revogação do consentimento:</strong> retirar seu consentimento para tratamentos baseados nessa hipótese legal.</li>
+    <li><strong>Oposição:</strong> opor-se a tratamentos realizados com base em outras hipóteses legais, em caso de descumprimento da LGPD.</li>
+    <li><strong>Revisão de decisões automatizadas:</strong> solicitar revisão humana de decisões tomadas exclusivamente por meios automatizados que afetem seus interesses.</li>
+  </ul>
+  <p>
+    Para exercer qualquer direito, entre em contato com nosso Encarregado de Dados (DPO) pelo
+    e-mail <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>, identificando-se e
+    descrevendo sua solicitação. Responderemos no prazo de <strong>15 (quinze) dias</strong>
+    para confirmação da existência do tratamento e, em até <strong>30 (trinta) dias</strong>,
+    para atendimento integral da solicitação, conforme a LGPD.
+  </p>
+  <p>
+    Você também pode peticionar à <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong>
+    em caso de descumprimento da legislação: <a href="https://www.gov.br/anpd" target="_blank">gov.br/anpd</a>.
+  </p>
+
+  <h2>8. Exclusão de Conta e Dados</h2>
+  <p>
+    Você pode solicitar a exclusão da sua conta e dos seus dados pessoais a qualquer momento:
+  </p>
+  <ul>
+    <li><strong>Pelo App:</strong> Configurações → Minha Conta → Excluir Conta.</li>
+    <li><strong>Por e-mail:</strong> <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> com o assunto "Exclusão de Conta".</li>
+    <li><strong>Pelo site:</strong> <a href="/excluir-conta">{SITE.url}/excluir-conta</a>.</li>
+  </ul>
+  <p>
+    A exclusão remove seus dados pessoais identificáveis. Avaliações publicadas, mensagens em
+    chats e registros de reservas podem ser anonimizados (não identificáveis) para preservar
+    o histórico legítimo de outras partes envolvidas e a integridade da Plataforma.
+  </p>
+
+  <h2>9. Segurança dos Dados</h2>
+  <p>
+    Adotamos medidas técnicas, administrativas e organizacionais para proteger seus dados contra
+    acessos não autorizados, perda, alteração ou divulgação indevida, incluindo:
+  </p>
+  <ul>
+    <li><strong>Criptografia em trânsito:</strong> toda comunicação entre seu dispositivo e nossos servidores é protegida por TLS/HTTPS.</li>
+    <li><strong>Autenticação segura:</strong> senhas são armazenadas com hash criptográfico (bcrypt). Nunca armazenamos sua senha em texto claro.</li>
+    <li><strong>Row Level Security (RLS):</strong> políticas de acesso a nível de linha no banco de dados garantem que cada Usuário acesse apenas seus próprios dados.</li>
+    <li><strong>Controle de acesso:</strong> acesso administrativo aos dados é restrito a colaboradores autorizados, com autenticação multifator.</li>
+    <li><strong>Monitoramento:</strong> logs de acesso e auditoria de ações administrativas são mantidos para rastreabilidade.</li>
+    <li><strong>Auditoria de segurança:</strong> realizamos avaliações periódicas de segurança (pentests) para identificar e corrigir vulnerabilidades.</li>
+  </ul>
+  <p>
+    Apesar de nossos esforços, nenhum sistema é completamente invulnerável. Em caso de incidente
+    de segurança que possa afetar seus dados, notificaremos você e a ANPD nos prazos previstos
+    pela LGPD.
+  </p>
+
+  <h2>10. Notificações Push e Comunicações por SMS</h2>
+  <p>
+    Utilizamos notificações push (via Expo) e SMS (via Twilio) para comunicações relacionadas
+    ao serviço. Você pode gerenciar as permissões de push nas configurações do seu dispositivo.
+    A desativação das notificações push não impedirá o recebimento de SMS de verificação.
+  </p>
+  <p>
+    Comunicações de marketing por push ou e-mail são enviadas apenas com seu consentimento
+    e podem ser canceladas a qualquer momento:
+  </p>
+  <ul>
+    <li>Pelo App: Configurações → Notificações → Preferências.</li>
+    <li>Por e-mail: respondendo "CANCELAR" ou clicando no link de descadastro.</li>
+    <li>Por solicitação em: <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.</li>
+  </ul>
+
+  <h2>11. Cookies e Tecnologias de Rastreamento</h2>
+  <p>
+    O aplicativo móvel iFishing não utiliza cookies. O site institucional
+    <a href={SITE.url}>{SITE.url}</a> pode utilizar cookies técnicos estritamente
+    necessários ao funcionamento das páginas (sessão, preferências de idioma), não sujeitos
+    a consentimento. Não utilizamos cookies de rastreamento ou publicidade de terceiros
+    sem seu consentimento explícito.
+  </p>
+
+  <h2>12. Crianças e Adolescentes</h2>
+  <p>
+    A Plataforma é destinada exclusivamente a pessoas com <strong>18 (dezoito) anos ou mais</strong>.
+    Não coletamos, de forma intencional, dados de crianças ou adolescentes menores de 18 anos.
+    Se tomarmos conhecimento de que coletamos dados de um menor sem o devido consentimento do
+    responsável legal, eliminaremos tais dados imediatamente.
+  </p>
+  <p>
+    Caso você identifique Usuário menor de idade na Plataforma, por favor nos informe em
+    <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
+  </p>
+
+  <h2>13. Links para Sites de Terceiros</h2>
+  <p>
+    A Plataforma pode conter links para sites ou serviços de terceiros (redes sociais, parceiros,
+    meios de pagamento). Esta Política não se aplica a esses terceiros. Recomendamos que você
+    leia as políticas de privacidade de cada serviço antes de compartilhar seus dados.
+  </p>
+
+  <h2>14. Encarregado de Proteção de Dados (DPO)</h2>
+  <p>
+    Nos termos do art. 41 da LGPD, indicamos como Encarregado de Proteção de Dados (DPO)
+    o responsável pelo endereço:
+  </p>
+  <ul>
+    <li><strong>E-mail:</strong> <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a></li>
+    <li><strong>Empresa:</strong> {SITE.legal.razaoSocial} — CNPJ {SITE.legal.cnpj}</li>
+  </ul>
+  <p>
+    O Encarregado é o canal de comunicação entre o iFishing, os titulares de dados e a ANPD.
+    Toda solicitação relacionada a dados pessoais deve ser direcionada a este contato.
+  </p>
+
+  <h2>15. Alterações desta Política</h2>
+  <p>
+    Esta Política pode ser atualizada periodicamente para refletir mudanças na legislação,
+    em nossas práticas ou na Plataforma. Alterações relevantes serão comunicadas:
+  </p>
+  <ul>
+    <li>Por notificação push no App.</li>
+    <li>Por e-mail, para o endereço cadastrado em sua Conta.</li>
+    <li>Por aviso em destaque no App ou no site, com antecedência mínima de 10 (dez) dias corridos.</li>
+  </ul>
+  <p>
+    A versão mais recente desta Política estará sempre disponível em
+    <a href="/privacidade">{SITE.url}/privacidade</a>. O uso continuado da Plataforma após
+    a vigência das alterações implica concordância com a versão atualizada.
+  </p>
+
+  <h2>16. Contato</h2>
+  <p>
+    Para qualquer dúvida, solicitação ou reclamação relacionada a esta Política ou ao tratamento
+    dos seus dados pessoais:
+  </p>
+  <ul>
+    <li><strong>E-mail:</strong> <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a></li>
+    <li><strong>Site:</strong> <a href={SITE.url}>{SITE.url}</a></li>
+    <li><strong>Autoridade Nacional de Proteção de Dados (ANPD):</strong> <a href="https://www.gov.br/anpd" target="_blank">gov.br/anpd</a></li>
+  </ul>
+
 </LegalLayout>
