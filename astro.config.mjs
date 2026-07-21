@@ -11,9 +11,15 @@ export default defineConfig({
   integrations: [
     tailwind({ applyBaseStyles: false }),
     sitemap({
-      filter: (page) => !page.includes('/guide/') && !page.includes('/chat/'),
+      filter: (page) => !['/guide/', '/chat/', '/redefinir-senha/', '/email-confirmado/', '/android/', '/ios/'].some(p => page.includes(p)),
       changefreq: 'weekly',
-      priority: 0.7,
+      serialize(item) {
+        if (item.url === 'https://ifishing.com.br/') item.priority = 1.0;
+        else if (['/como-funciona/', '/para-guias/', '/baixar/'].some(p => item.url.endsWith(p))) item.priority = 0.8;
+        else item.priority = 0.5;
+        item.lastmod = new Date().toISOString().split('T')[0];
+        return item;
+      },
     }),
   ],
   vite: {
