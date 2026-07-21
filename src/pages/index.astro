@@ -50,6 +50,9 @@ const features = [
 ];
 ---
 <BaseLayout description="O iFishing conecta pescadores a guias de pesca profissionais em todo o Brasil. Sua próxima fisgada começa aqui.">
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="/screen-home.webp" fetchpriority="high" />
+  </Fragment>
   <section class="relative overflow-hidden bg-gradient-to-b from-brand-light to-white">
     <div class="container-page py-10 lg:py-16 grid gap-10 lg:grid-cols-2 lg:items-center">
       <div class="text-center lg:text-left">
@@ -75,9 +78,12 @@ const features = [
       <div class="relative">
         <div class="aspect-[3/2] w-full rounded-card overflow-hidden ring-1 ring-surface-border shadow-card">
           <img
-            src="/screen-home.png"
+            src="/screen-home.webp"
             alt="Pescador no barco ao amanhecer com tucunaré saltando na água"
             class="h-full w-full object-cover"
+            width="1536"
+            height="1024"
+            loading="eager"
             decoding="async"
             fetchpriority="high"
           />
@@ -111,10 +117,10 @@ const features = [
         </div>
         <div class="flex justify-center gap-4 sm:gap-6">
           <div class="relative w-full max-w-[180px] rounded-[2.5rem] bg-ink p-2 shadow-card">
-            <img src="/screen-busca3.png" alt="Tela de busca do iFishing com lista de guias de pesca e fotos de pescaria" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
+            <img src="/screen-busca3.webp" alt="Tela de busca do iFishing com lista de guias de pesca e fotos de pescaria" width="852" height="1846" loading="eager" decoding="async" class="w-full rounded-[2rem]" />
           </div>
           <div class="relative w-full max-w-[180px] rounded-[2.5rem] bg-ink p-2 shadow-card">
-            <img src="/screen-mapa.png" alt="Mapa do Brasil com pins de guias do iFishing em diferentes regiões" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
+            <img src="/screen-mapa.webp" alt="Mapa do Brasil com pins de guias do iFishing em diferentes regiões" width="1320" height="2868" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
           </div>
         </div>
       </div>
@@ -239,13 +245,13 @@ const features = [
       </div>
       <div class="flex justify-center gap-4 sm:gap-6">
         <div class="relative w-full max-w-[160px] rounded-[2.5rem] bg-ink p-2 shadow-card">
-          <img src="/screen-pontos.png" alt="Tela de pontos de pesca com mapa satélite e opção de marcar local no iFishing" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
+          <img src="/screen-pontos.webp" alt="Tela de pontos de pesca com mapa satélite e opção de marcar local no iFishing" width="1320" height="2868" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
         </div>
         <div class="relative w-full max-w-[160px] rounded-[2.5rem] bg-ink p-2 shadow-card">
-          <img src="/screen-solunar.png" alt="Tela de atividade dos peixes com índice solunar e gráfico por hora no iFishing" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
+          <img src="/screen-solunar.webp" alt="Tela de atividade dos peixes com índice solunar e gráfico por hora no iFishing" width="736" height="1600" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
         </div>
         <div class="relative w-full max-w-[160px] rounded-[2.5rem] bg-ink p-2 shadow-card">
-          <img src="/screen-meteo.png" alt="Tela de meteorologia com condições atuais e previsão hora a hora no iFishing" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
+          <img src="/screen-meteo.webp" alt="Tela de meteorologia com condições atuais e previsão hora a hora no iFishing" width="736" height="1600" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
         </div>
       </div>
     </div>

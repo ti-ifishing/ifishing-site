@@ -5,6 +5,8 @@ import StoreBadges from '~/components/StoreBadges.astro';
 interface Image {
   src: string;
   alt: string;
+  width: number;
+  height: number;
 }
 
 interface Section {
@@ -29,8 +31,8 @@ const sections: Section[] = [
       'Avaliações ordenadas por relevância',
     ],
     images: [
-      { src: '/screen-busca3.png', alt: 'Tela de busca do iFishing com lista de guias e suas fotos de pesca' },
-      { src: '/screen-mapa.png', alt: 'Mapa do Brasil com pins indicando guias do iFishing em diferentes regiões' },
+      { src: '/screen-busca3.webp', alt: 'Tela de busca do iFishing com lista de guias e suas fotos de pesca', width: 852, height: 1846 },
+      { src: '/screen-mapa.webp', alt: 'Mapa do Brasil com pins indicando guias do iFishing em diferentes regiões', width: 1320, height: 2868 },
     ],
   },
   {
@@ -44,7 +46,7 @@ const sections: Section[] = [
       'Foto do contato abre em tela cheia',
       'Histórico mantido pra consulta',
     ],
-    images: [{ src: '/screen-chat.png', alt: 'Tela de chat 1-on-1 entre pescador e guia no iFishing' }],
+    images: [{ src: '/screen-chat.webp', alt: 'Tela de chat 1-on-1 entre pescador e guia no iFishing', width: 1320, height: 2868 }],
   },
   {
     eyebrow: '3 · Reserva',
@@ -55,7 +57,7 @@ const sections: Section[] = [
       'Lembretes automáticos na véspera e no dia',
       'Cancelamento com motivo registrado',
     ],
-    images: [{ src: '/screen-calendario.png', alt: 'Tela de calendário do guia com datas disponíveis e bloqueadas no iFishing' }],
+    images: [{ src: '/screen-calendario.webp', alt: 'Tela de calendário do guia com datas disponíveis e bloqueadas no iFishing', width: 1320, height: 2868 }],
   },
   {
     eyebrow: '4 · Avaliação',
@@ -66,7 +68,7 @@ const sections: Section[] = [
       'Resposta pública do guia',
       'Moderação contra avaliações abusivas',
     ],
-    images: [{ src: '/screen-avaliacoes.png', alt: 'Tela de avaliação pós-pescaria com estrelas e comentário no iFishing' }],
+    images: [{ src: '/screen-avaliacoes.webp', alt: 'Tela de avaliação pós-pescaria com estrelas e comentário no iFishing', width: 1320, height: 2868 }],
   },
 ];
 
@@ -112,6 +114,8 @@ const sections: Section[] = [
                   <img
                     src={img.src}
                     alt={img.alt}
+                    width={img.width}
+                    height={img.height}
                     loading="lazy"
                     decoding="async"
                     class="w-full rounded-[2rem]"
