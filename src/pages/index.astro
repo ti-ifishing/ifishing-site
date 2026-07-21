@@ -5,52 +5,49 @@ import { SITE } from '~/lib/site';
 
 const steps = [
   {
-    icon: 'search',
+    svg: '<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>',
     title: 'Lance a isca',
     text: 'Busque guias por nome, cidade e estado ou no mapa. Tem profissional em todo o Brasil.',
   },
   {
-    icon: 'message',
+    svg: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
     title: 'Fisgue o guia',
     text: 'Converse pelo chat, tire dúvidas e veja se é o profissional certo pra você.',
   },
   {
-    icon: 'calendar',
+    svg: '<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
     title: 'Amarre a pescaria',
     text: 'Reserve a data direto pelo calendário do guia. Rápido e sem conflito.',
   },
   {
-    icon: 'star',
+    svg: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
     title: 'Conte a história',
     text: 'Avalie depois da pescaria e ajude outros pescadores a escolher bem.',
   },
 ];
 
-interface Feature {
-  title: string;
-  text: string;
-  badge?: string;
-}
-
-const features: Feature[] = [
+const features = [
   {
     title: 'Atendimento em todo o Brasil',
     text: 'De Norte a Sul: pescaria de tucunaré, dourado, robalo, pintado e muito mais.',
+    svg: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
   },
   {
     title: 'Guias verificados',
-    text: 'Telefone validado por SMS e Carteira de Pesca Profissional conferida pela nossa equipe. Procure o selo azul — é garantia de profissional real.',
+    text: 'Telefone validado por SMS e documento de identidade conferido pela nossa equipe (Carteira de Pesca Profissional, CPF ou RG). Procure o selo azul, é garantia de profissional real.',
+    svg: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
   },
   {
     title: 'Reservas organizadas',
     text: 'Cada pescaria fica registrada com data, número de pescadores e histórico de mensagens. Sem combinado perdido no WhatsApp.',
+    svg: '<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>',
   },
   {
     title: 'Notificações em tempo real',
     text: 'Receba alertas de novas mensagens do guia e atualizações da reserva, mesmo com o app fechado.',
+    svg: '<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>',
   },
 ];
-
 ---
 <BaseLayout description="O iFishing conecta pescadores a guias de pesca profissionais em todo o Brasil. Sua próxima fisgada começa aqui.">
   <section class="relative overflow-hidden bg-gradient-to-b from-brand-light to-white">
@@ -89,6 +86,41 @@ const features: Feature[] = [
     </div>
   </section>
 
+  <section class="bg-ink/[0.02] border-y border-surface-border">
+    <div class="container-page py-12">
+      <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full bg-brand-light px-3 py-1 text-xs font-semibold text-brand-dark">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-brand"></span>
+            Guias verificados em todo o Brasil
+          </span>
+          <h2 class="mt-4 text-3xl sm:text-4xl text-ink">Encontre o guia certo pra você</h2>
+          <p class="mt-3 text-lg text-ink-muted">Busque por nome, cidade ou espécie. Use o mapa pra descobrir guias próximos da sua região. Compare perfis com avaliações reais e fotos das pescarias antes de reservar.</p>
+          <ul class="mt-6 space-y-3">
+            {[
+              'Filtros por preço, avaliação mínima e espécie',
+              'Mapa interativo com guias por região',
+              'Perfis com galeria, bio e avaliações reais',
+            ].map((item) => (
+              <li class="flex items-center gap-2 text-ink-muted">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 text-brand"><polyline points="20 6 9 17 4 12"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="flex justify-center gap-4 sm:gap-6">
+          <div class="relative w-full max-w-[180px] rounded-[2.5rem] bg-ink p-2 shadow-card">
+            <img src="/screen-busca3.png" alt="Tela de busca do iFishing com lista de guias de pesca e fotos de pescaria" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
+          </div>
+          <div class="relative w-full max-w-[180px] rounded-[2.5rem] bg-ink p-2 shadow-card">
+            <img src="/screen-mapa.png" alt="Mapa do Brasil com pins de guias do iFishing em diferentes regiões" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="container-page py-12">
     <div class="max-w-2xl">
       <h2 class="text-3xl sm:text-4xl text-ink">Como funciona</h2>
@@ -96,25 +128,31 @@ const features: Feature[] = [
     </div>
     <ol class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {steps.map((step, i) => (
-        <li class="rounded-card border border-surface-border bg-white p-6 shadow-card/0 hover:shadow-card transition text-center">
-          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-light text-brand-dark font-display font-extrabold">{i + 1}</span>
-          <h3 class="mt-4 text-lg text-ink">{step.title}</h3>
+        <li class="rounded-card border border-surface-border bg-white p-6 hover:shadow-card transition text-center">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-light text-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" set:html={step.svg} />
+          </span>
+          <p class="mt-3 text-xs font-semibold text-brand-dark uppercase tracking-wider">Passo {i + 1}</p>
+          <h3 class="mt-1 text-lg text-ink">{step.title}</h3>
           <p class="mt-2 text-sm text-ink-muted">{step.text}</p>
         </li>
       ))}
     </ol>
+    <div class="mt-6 text-center">
+      <a href="/como-funciona" class="text-sm font-semibold text-brand hover:underline">Ver o passo a passo completo →</a>
+    </div>
   </section>
 
   <section class="bg-ink/[0.02] border-y border-surface-border">
     <div class="container-page py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
       {features.map((f) => (
         <div class="text-center">
-          <div class="flex flex-wrap items-center justify-center gap-2">
-            <h3 class="text-xl text-ink">{f.title}</h3>
-            {f.badge && (
-              <span class="inline-flex items-center rounded-full bg-brand px-2.5 py-0.5 text-xs font-bold text-white uppercase tracking-wider">{f.badge}</span>
-            )}
+          <div class="flex justify-center mb-4">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-light text-brand">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" set:html={f.svg} />
+            </span>
           </div>
+          <h3 class="text-xl text-ink">{f.title}</h3>
           <p class="mt-2 text-ink-muted">{f.text}</p>
         </div>
       ))}
@@ -150,9 +188,17 @@ const features: Feature[] = [
           <span class="inline-block h-1.5 w-1.5 rounded-full bg-brand"></span>
           Muito além da reserva
         </span>
-        <h2 class="mt-4 text-3xl sm:text-4xl text-ink">Ferramentas pra pescar no horário certo</h2>
-        <p class="mt-3 text-lg text-ink-muted">Solunar, meteorologia e mapa de guias integrados — tudo no mesmo app, sem precisar de outro.</p>
+        <h2 class="mt-4 text-3xl sm:text-4xl text-ink">As ferramentas que guia e pescador precisam, num só lugar</h2>
         <ul class="mt-6 space-y-4">
+          <li class="flex gap-4">
+            <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-light text-brand">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            </span>
+            <div>
+              <p class="font-semibold text-ink">Pontos de pesca</p>
+              <p class="mt-1 text-sm text-ink-muted">Marque capturas, cevas e pontos especiais no mapa com foto e nota. 100% privado, só você vê seus pontos.</p>
+            </div>
+          </li>
           <li class="flex gap-4">
             <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-light text-brand">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -168,7 +214,7 @@ const features: Feature[] = [
             </span>
             <div>
               <p class="font-semibold text-ink">Meteorologia hora a hora</p>
-              <p class="mt-1 text-sm text-ink-muted">Temperatura, chuva, pressão, umidade, índice UV, vento com direção e rajadas. Gráfico das próximas horas em tempo real, para o ponto de pesca do guia.</p>
+              <p class="mt-1 text-sm text-ink-muted">Consulte o tempo de qualquer ponto de pesca do Brasil: temperatura, vento, chuva, pressão e índice UV hora a hora, com previsão de até 7 dias.</p>
             </div>
           </li>
           <li class="flex gap-4">
@@ -182,20 +228,23 @@ const features: Feature[] = [
           </li>
           <li class="flex gap-4">
             <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-light text-brand">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </span>
             <div>
-              <p class="font-semibold text-ink">Favoritos</p>
-              <p class="mt-1 text-sm text-ink-muted">Salve os guias que você curtiu para acessar rapidinho na próxima pescaria.</p>
+              <p class="font-semibold text-ink">Chat em tempo real</p>
+              <p class="mt-1 text-sm text-ink-muted">Converse com o guia direto no app, com confirmação de leitura, indicador de digitando e resposta a mensagens específicas.</p>
             </div>
           </li>
         </ul>
       </div>
       <div class="flex justify-center gap-4 sm:gap-6">
-        <div class="relative w-full max-w-[180px] rounded-[2.5rem] bg-ink p-2 shadow-card">
+        <div class="relative w-full max-w-[160px] rounded-[2.5rem] bg-ink p-2 shadow-card">
+          <img src="/screen-pontos.png" alt="Tela de pontos de pesca com mapa satélite e opção de marcar local no iFishing" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
+        </div>
+        <div class="relative w-full max-w-[160px] rounded-[2.5rem] bg-ink p-2 shadow-card">
           <img src="/screen-solunar.png" alt="Tela de atividade dos peixes com índice solunar e gráfico por hora no iFishing" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
         </div>
-        <div class="relative w-full max-w-[180px] rounded-[2.5rem] bg-ink p-2 shadow-card">
+        <div class="relative w-full max-w-[160px] rounded-[2.5rem] bg-ink p-2 shadow-card">
           <img src="/screen-meteo.png" alt="Tela de meteorologia com condições atuais e previsão hora a hora no iFishing" loading="lazy" decoding="async" class="w-full rounded-[2rem]" />
         </div>
       </div>
@@ -213,8 +262,8 @@ const features: Feature[] = [
   </section>
 
   <section class="container-page py-12 text-center">
-    <h2 class="text-3xl sm:text-4xl text-ink">Bora?</h2>
-    <p class="mt-3 text-ink-muted text-lg max-w-xl mx-auto">Baixe o iFishing e organize sua próxima pescaria em minutos.</p>
+    <h2 class="text-3xl sm:text-4xl text-ink">Bora marcar a data.</h2>
+    <p class="mt-3 text-ink-muted text-lg max-w-xl mx-auto">Encontre o guia certo, reserve a data e organize tudo pelo app. Gratuito para pescadores e guias, sem taxa e sem comissão.</p>
     <div class="mt-6 flex justify-center">
       <StoreBadges align="center" />
     </div>

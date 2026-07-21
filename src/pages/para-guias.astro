@@ -2,56 +2,82 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import StoreBadges from '~/components/StoreBadges.astro';
 
-interface Beneficio {
-  title: string;
-  text: string;
-  badge?: string;
-}
-
-const beneficios: Beneficio[] = [
+const beneficios = [
   {
     title: 'Visibilidade nacional',
     text: 'Pescadores buscam guias por cidade, região e espécie em todo o Brasil. Apareça pra quem quer pescar perto de você.',
+    svg: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+  },
+  {
+    title: 'Sem mensalidade',
+    text: 'Cadastro gratuito, sem taxa mensal e sem comissão. Você recebe direto do pescador, sem intermediário.',
+    svg: '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
+  },
+  {
+    title: 'Selo de Guia Verificado',
+    text: 'Envie sua Carteira de Pesca Profissional, CPF ou RG para análise. Aprovado, seu perfil ganha um selo azul que aumenta a confiança do pescador na hora de contratar.',
+    svg: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
   },
   {
     title: 'Agenda integrada',
     text: 'Bloqueie datas, controle dias de manutenção e nunca mais responda "tá livre dia 12?".',
+    svg: '<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
   },
   {
     title: 'Perfil profissional',
     text: 'Foto, bio, embarcação, modalidades e galeria. Mostra seu trampo do jeito certo pra quem está procurando guia.',
-  },
-  {
-    title: 'Selo de Guia Verificado',
-    text: 'Envie sua Carteira de Pesca Profissional para análise da nossa equipe. Aprovado, seu perfil ganha um selo azul que aumenta a confiança do pescador na hora de contratar.',
+    svg: '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
   },
   {
     title: 'Cliente verificado',
     text: 'O pescador valida o telefone por SMS antes de reservar. Reduz o risco de furo.',
+    svg: '<path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/>',
   },
   {
     title: 'Avaliações que convertem',
     text: 'Boas avaliações puxam mais reservas. O sistema premia quem entrega pescaria boa.',
+    svg: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
   },
   {
     title: 'Chat dentro do app',
-    text: 'Tira-dúvida e combinação de roteiro em um lugar só. Com confirmação de leitura, indicador de "digitando" e resposta a mensagens específicas.',
+    text: 'Tira-dúvida e combinação de roteiro em um lugar só. Com confirmação de leitura, indicador de digitando e resposta a mensagens específicas.',
+    svg: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
   },
   {
     title: 'Notificações em tempo real',
-    text: 'Receba alertas de novas mensagens de pescadores, solicitações de reserva e atualizações — mesmo com o app fechado.',
-  },
-  {
-    title: 'Sem mensalidade',
-    text: 'Cadastro gratuito, sem taxa mensal e sem comissão. Você recebe direto do pescador.',
+    text: 'Receba alertas de novas mensagens de pescadores, solicitações de reserva e atualizações, mesmo com o app fechado.',
+    svg: '<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>',
   },
 ];
 
 const passos = [
   'Baixe o iFishing e crie sua conta como guia',
-  'Monte seu perfil com foto, bio, embarcação e modalidades. Solicite o Selo Verificado enviando sua Carteira de Pesca Profissional.',
-  'Seu perfil entra no ar pra pescadores de todo o Brasil',
-  'Gerencie agenda e reservas pelo próprio app',
+  'Monte seu perfil: foto, bio, embarcação e modalidades',
+  'Solicite o Selo Verificado enviando sua Carteira de Pesca Profissional, CPF ou RG',
+  'Receba pedidos, gerencie sua agenda e cresça com as avaliações',
+];
+
+const faq = [
+  {
+    q: 'Como recebo o pagamento das pescarias?',
+    a: 'Você combina diretamente com o pescador. Pix, dinheiro, transferência bancária: o meio de pagamento é entre vocês. O iFishing não processa pagamentos e não cobra nada sobre os valores negociados.',
+  },
+  {
+    q: 'Preciso pagar alguma taxa ou mensalidade?',
+    a: 'Não. O iFishing é 100% gratuito para guias. Sem taxa de cadastro, sem mensalidade e sem comissão sobre as reservas. Sempre.',
+  },
+  {
+    q: 'Como funciona o Selo de Guia Verificado?',
+    a: 'Dentro do app, você envia uma foto da sua Carteira de Pesca Profissional, CPF ou RG. Nossa equipe revisa e, se aprovado, seu perfil ganha o selo azul. Ele aparece na busca e no seu perfil, aumentando a confiança de quem vai contratar.',
+  },
+  {
+    q: 'Posso cancelar ou recusar uma reserva?',
+    a: 'Sim. Você tem controle total da sua agenda. Pode bloquear datas, recusar solicitações e cancelar reservas com motivo registrado. O histórico fica no app para consulta.',
+  },
+  {
+    q: 'O que acontece se um pescador não aparecer?',
+    a: 'Todos os pescadores validam o telefone por SMS antes de reservar, o que reduz o risco de furo. O histórico de reservas e cancelamentos fica registrado, e o sistema de avaliações incentiva o comprometimento de ambos os lados.',
+  },
 ];
 ---
 <BaseLayout
@@ -81,17 +107,34 @@ const passos = [
     </div>
   </section>
 
-  <section class="container-page py-20">
+  <div class="bg-brand text-white">
+    <div class="container-page py-8">
+      <div class="grid gap-8 sm:grid-cols-3 text-center">
+        <div>
+          <p class="text-3xl font-extrabold">R$ 0</p>
+          <p class="mt-1 text-sm text-white/80">de mensalidade</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold">0%</p>
+          <p class="mt-1 text-sm text-white/80">de comissão sobre reservas</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold">100%</p>
+          <p class="mt-1 text-sm text-white/80">do valor vai direto pro seu bolso</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="container-page py-12">
     <h2 class="text-3xl text-ink">Por que entrar no iFishing</h2>
     <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {beneficios.map((b) => (
         <div class="rounded-card border border-surface-border bg-white p-6">
-          <div class="flex flex-wrap items-center gap-2">
-            <h3 class="text-lg text-ink">{b.title}</h3>
-            {b.badge && (
-              <span class="inline-flex items-center rounded-full bg-brand px-2.5 py-0.5 text-xs font-bold text-white uppercase tracking-wider">{b.badge}</span>
-            )}
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-light text-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" set:html={b.svg} />
           </div>
+          <h3 class="mt-4 text-lg text-ink">{b.title}</h3>
           <p class="mt-2 text-ink-muted">{b.text}</p>
         </div>
       ))}
@@ -99,7 +142,7 @@ const passos = [
   </section>
 
   <section class="bg-ink/[0.02] border-y border-surface-border">
-    <div class="container-page py-20">
+    <div class="container-page py-12">
       <h2 class="text-3xl text-ink">Como entrar pra rede</h2>
       <ol class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {passos.map((p, i) => (
@@ -112,10 +155,22 @@ const passos = [
     </div>
   </section>
 
-  <section class="container-page py-20 text-center">
-    <h2 class="text-3xl text-ink">Baixe o app e cadastre-se</h2>
+  <section class="container-page py-12">
+    <h2 class="text-3xl text-ink">Perguntas frequentes</h2>
+    <div class="mt-8 divide-y divide-surface-border">
+      {faq.map((item) => (
+        <div class="py-6">
+          <h3 class="text-lg font-semibold text-ink">{item.q}</h3>
+          <p class="mt-2 text-ink-muted">{item.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-page py-12 text-center">
+    <h2 class="text-3xl text-ink">Comece agora, é gratuito</h2>
     <p class="mt-3 text-ink-muted max-w-xl mx-auto">
-      O cadastro de guia é feito direto no iFishing. Baixe agora e crie seu perfil em minutos.
+      Cadastro feito direto no app em menos de 5 minutos. Baixe o iFishing e crie seu perfil de guia hoje.
     </p>
     <div class="mt-8 flex justify-center"><StoreBadges align="center" /></div>
   </section>
