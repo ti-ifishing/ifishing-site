@@ -51,7 +51,7 @@ const height = size === 'sm' ? 'h-12' : 'h-14';
   </a>
 </div>
 
-<script>
+<script is:inline>
   document.querySelectorAll('[data-store-badge]').forEach((link) => {
     link.addEventListener('click', () => {
       if (typeof window.gtag === 'function') {
