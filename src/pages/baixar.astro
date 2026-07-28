@@ -50,6 +50,7 @@ const screenshots: Array<{ src: string; alt: string; caption: string }> = [
             target="_blank"
             rel="noopener"
             aria-label="Baixar o iFishing na App Store"
+            data-store-badge="ios"
             class="inline-flex items-center gap-3 rounded-2xl bg-ink px-5 h-14 text-white transition hover:bg-black"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.24-.01-.36-.03-.214-.99.27-2.02.825-2.7.74-.91 1.99-1.62 3.022-1.97.24.01.48.03.677.05zM20.5 17.45c-.43.99-.94 1.99-1.62 2.84-.77.95-1.79 2.13-3.06 2.14-1.13.01-1.42-.7-3.01-.69-1.6.01-1.93.7-3.05.7-1.27.01-2.24-1.05-3.02-2-.78-.95-1.71-2.55-1.88-4.07-.19-1.7.09-3.46.78-4.71.6-1.09 1.7-2.05 2.97-2.05 1.16-.02 2.25.78 2.99.78.74 0 2.07-.96 3.5-.82.6.02 2.27.24 3.34 1.83-2.7 1.57-2.27 5.49-.21 6.65.55.3 1.26.5 2.27.3z"/></svg>
@@ -67,6 +68,7 @@ const screenshots: Array<{ src: string; alt: string; caption: string }> = [
             target="_blank"
             rel="noopener"
             aria-label="Baixar o iFishing no Google Play"
+            data-store-badge="android"
             class="inline-flex items-center gap-3 rounded-2xl bg-ink px-5 h-14 text-white transition hover:bg-black"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-7 w-7" aria-hidden="true">
@@ -107,4 +109,17 @@ const screenshots: Array<{ src: string; alt: string; caption: string }> = [
       ))}
     </div>
   </section>
+
+  <script is:inline>
+    document.querySelectorAll('[data-store-badge]').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'app_store_click', { app_store: link.getAttribute('data-store-badge') });
+        }
+        if (typeof window.fbq === 'function') {
+          window.fbq('trackCustom', 'app_store_click', { app_store: link.getAttribute('data-store-badge') });
+        }
+      });
+    });
+  </script>
 </BaseLayout>
