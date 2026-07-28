@@ -57,6 +57,9 @@ const height = size === 'sm' ? 'h-12' : 'h-14';
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'app_store_click', { app_store: link.getAttribute('data-store-badge') });
       }
+      if (typeof window.fbq === 'function') {
+        window.fbq('trackCustom', 'app_store_click', { app_store: link.getAttribute('data-store-badge') });
+      }
     });
   });
 </script>
