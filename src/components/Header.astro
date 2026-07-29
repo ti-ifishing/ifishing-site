@@ -3,10 +3,10 @@ import { SITE } from '~/lib/site';
 
 const nav = [
   { href: '/', label: 'Home' },
-  { href: '/como-funciona', label: 'Como funciona' },
-  { href: '/para-guias', label: 'Sou guia' },
-  { href: '/baixar', label: 'Baixar app' },
-  { href: '/contato', label: 'Contato' },
+  { href: '/como-funciona/', label: 'Como funciona' },
+  { href: '/para-guias/', label: 'Sou guia' },
+  { href: '/baixar/', label: 'Baixar app' },
+  { href: '/contato/', label: 'Contato' },
 ];
 
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -51,7 +51,7 @@ const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
               <a href={item.href} class="block rounded-lg px-3 py-2 text-sm font-medium text-ink hover:bg-surface-border/30">{item.label}</a>
             </li>
           ))}
-          <li class="pt-2"><a href="/baixar" class="btn-primary w-full">Baixar agora</a></li>
+          <li class="pt-2"><a href="/baixar/" class="btn-primary w-full">Baixar agora</a></li>
         </ul>
       </div>
     </details>
