@@ -56,6 +56,7 @@ const height = size === 'sm' ? 'h-12' : 'h-14';
     link.addEventListener('click', () => {
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'app_store_click', { app_store: link.getAttribute('data-store-badge') });
+        window.gtag('event', 'conversion', { send_to: 'AW-18250365471/mjL_CPPc1dccEJ_0uf5D' });
       }
       if (typeof window.fbq === 'function') {
         window.fbq('trackCustom', 'app_store_click', { app_store: link.getAttribute('data-store-badge') });
