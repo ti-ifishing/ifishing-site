@@ -23,9 +23,10 @@ export const SITE = {
     iosTeamId: 'XANMNBTR62',
   },
   social: {
-    instagram: '', // ainda não ativo
+    instagram: 'https://www.instagram.com/ifishing.oficial',
+    facebook: 'https://www.facebook.com/1168734196322917',
     youtube: '',
-    tiktok: '',
+    tiktok: 'https://www.tiktok.com/@ifishing.oficial',
   },
 } as const;
 
