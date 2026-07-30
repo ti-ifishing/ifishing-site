@@ -20,7 +20,7 @@ Astro 4 static site, GitHub Pages at ifishing.com.br. Tailwind CSS, no JS framew
 
 **SVG icon arrays** (beneficios in para-guias.astro, steps in como-funciona.astro): the `svg` field holds inner HTML only (path/circle/polyline), rendered via `set:html={...}` on a wrapping `<svg viewBox="0 0 24 24">`. Do not change this to separate components.
 
-**Title format**: `iFishing · {title}` for sub-pages, `iFishing` alone for home. SEO.astro builds this — pass just the page name to BaseLayout, never include "iFishing" in the string.
+**Title format**: `iFishing · {title}` for every page, home included (changed 2026-07-29 for SEO — home previously had no `title` prop and rendered bare "iFishing"). SEO.astro builds this — pass just the page name to BaseLayout, never include "iFishing" in the string.
 
 **Announcement bar**: hardcoded in BaseLayout. Edit there directly if the copy changes.
 
